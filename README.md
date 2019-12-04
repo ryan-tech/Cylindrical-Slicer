@@ -3,6 +3,11 @@ Tkinter
 OpenGL
 Pygame
 
+Running Instructions:
+
+    $ {$projectpath}/venv/Scripts/activate
+    $ python gui.py
+
 Controls in Object Viewer:
     
     LMB: rotate object
