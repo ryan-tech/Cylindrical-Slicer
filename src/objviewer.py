@@ -52,10 +52,6 @@ def objView(filename):
                 sys.exit()
             elif e.type == KEYDOWN and e.key == K_ESCAPE:
                 sys.exit()
-            elif e.type == KEYDOWN and e.key == K_i:
-                scale += .1
-            elif e.type == KEYDOWN and e.key == K_o:
-                scale -= .1
             elif e.type == MOUSEBUTTONDOWN:
                 if e.button == 4: zpos = max(1, zpos-1)
                 elif e.button == 5: zpos += 1

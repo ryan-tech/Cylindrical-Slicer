@@ -7,5 +7,4 @@ Controls in Object Viewer:
     
     LMB: rotate object
     RMB: translate object
-    i : zoom in
-    o : zoom out 
+    Mouse wheel: zoom in and out
