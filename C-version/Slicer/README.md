@@ -1,4 +1,5 @@
-# PA3: Moons
+# This will need to be updated but this is the jump-off point for building our GUI in C++
+
 
 # Dependencies, Building, and Running
 
