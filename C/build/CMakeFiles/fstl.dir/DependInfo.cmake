@@ -4,17 +4,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ryan/cs426/fstl/build/fstl_autogen/mocs_compilation.cpp" "/home/ryan/cs426/fstl/build/CMakeFiles/fstl.dir/fstl_autogen/mocs_compilation.cpp.o"
-  "/home/ryan/cs426/fstl/build/qrc_gl.cpp" "/home/ryan/cs426/fstl/build/CMakeFiles/fstl.dir/qrc_gl.cpp.o"
-  "/home/ryan/cs426/fstl/build/qrc_qt.cpp" "/home/ryan/cs426/fstl/build/CMakeFiles/fstl.dir/qrc_qt.cpp.o"
-  "/home/ryan/cs426/fstl/src/app.cpp" "/home/ryan/cs426/fstl/build/CMakeFiles/fstl.dir/src/app.cpp.o"
-  "/home/ryan/cs426/fstl/src/backdrop.cpp" "/home/ryan/cs426/fstl/build/CMakeFiles/fstl.dir/src/backdrop.cpp.o"
-  "/home/ryan/cs426/fstl/src/canvas.cpp" "/home/ryan/cs426/fstl/build/CMakeFiles/fstl.dir/src/canvas.cpp.o"
-  "/home/ryan/cs426/fstl/src/glmesh.cpp" "/home/ryan/cs426/fstl/build/CMakeFiles/fstl.dir/src/glmesh.cpp.o"
-  "/home/ryan/cs426/fstl/src/loader.cpp" "/home/ryan/cs426/fstl/build/CMakeFiles/fstl.dir/src/loader.cpp.o"
-  "/home/ryan/cs426/fstl/src/main.cpp" "/home/ryan/cs426/fstl/build/CMakeFiles/fstl.dir/src/main.cpp.o"
-  "/home/ryan/cs426/fstl/src/mesh.cpp" "/home/ryan/cs426/fstl/build/CMakeFiles/fstl.dir/src/mesh.cpp.o"
-  "/home/ryan/cs426/fstl/src/window.cpp" "/home/ryan/cs426/fstl/build/CMakeFiles/fstl.dir/src/window.cpp.o"
+  "/home/ryan/cs426/Cylindrical-Slicer/C/build/fstl_autogen/mocs_compilation.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl.dir/fstl_autogen/mocs_compilation.cpp.o"
+  "/home/ryan/cs426/Cylindrical-Slicer/C/build/qrc_gl.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl.dir/qrc_gl.cpp.o"
+  "/home/ryan/cs426/Cylindrical-Slicer/C/build/qrc_qt.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl.dir/qrc_qt.cpp.o"
+  "/home/ryan/cs426/Cylindrical-Slicer/C/src/app.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl.dir/src/app.cpp.o"
+  "/home/ryan/cs426/Cylindrical-Slicer/C/src/backdrop.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl.dir/src/backdrop.cpp.o"
+  "/home/ryan/cs426/Cylindrical-Slicer/C/src/canvas.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl.dir/src/canvas.cpp.o"
+  "/home/ryan/cs426/Cylindrical-Slicer/C/src/glmesh.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl.dir/src/glmesh.cpp.o"
+  "/home/ryan/cs426/Cylindrical-Slicer/C/src/loader.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl.dir/src/loader.cpp.o"
+  "/home/ryan/cs426/Cylindrical-Slicer/C/src/main.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl.dir/src/main.cpp.o"
+  "/home/ryan/cs426/Cylindrical-Slicer/C/src/mesh.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl.dir/src/mesh.cpp.o"
+  "/home/ryan/cs426/Cylindrical-Slicer/C/src/window.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl.dir/src/window.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

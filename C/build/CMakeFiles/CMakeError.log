@@ -1,168 +1,24 @@
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: CMAKE_C_COMPILER-NOTFOUND 
-Build flags: 
-Id flags:  
-
-The output was:
-No such file or directory
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: CMAKE_C_COMPILER-NOTFOUND 
-Build flags: 
-Id flags: -c 
-
-The output was:
-No such file or directory
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: CMAKE_C_COMPILER-NOTFOUND 
-Build flags: 
-Id flags: -Aa 
-
-The output was:
-No such file or directory
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: CMAKE_C_COMPILER-NOTFOUND 
-Build flags: 
-Id flags: -D__CLASSIC_C__ 
-
-The output was:
-No such file or directory
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: CMAKE_C_COMPILER-NOTFOUND 
-Build flags: 
-Id flags:  
-
-The output was:
-No such file or directory
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: CMAKE_C_COMPILER-NOTFOUND 
-Build flags: 
-Id flags: -c 
-
-The output was:
-No such file or directory
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: CMAKE_C_COMPILER-NOTFOUND 
-Build flags: 
-Id flags: -Aa 
-
-The output was:
-No such file or directory
-
-
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: CMAKE_C_COMPILER-NOTFOUND 
-Build flags: 
-Id flags: -D__CLASSIC_C__ 
-
-The output was:
-No such file or directory
-
-
-Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: CMAKE_CXX_COMPILER-NOTFOUND 
-Build flags: 
-Id flags:  
-
-The output was:
-No such file or directory
-
-
-Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: CMAKE_CXX_COMPILER-NOTFOUND 
-Build flags: 
-Id flags: -c 
-
-The output was:
-No such file or directory
-
-
-Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: CMAKE_CXX_COMPILER-NOTFOUND 
-Build flags: 
-Id flags: --c++ 
-
-The output was:
-No such file or directory
-
-
-Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: CMAKE_CXX_COMPILER-NOTFOUND 
-Build flags: 
-Id flags: --ec++ 
-
-The output was:
-No such file or directory
-
-
-Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: CMAKE_CXX_COMPILER-NOTFOUND 
-Build flags: 
-Id flags:  
-
-The output was:
-No such file or directory
-
-
-Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: CMAKE_CXX_COMPILER-NOTFOUND 
-Build flags: 
-Id flags: -c 
-
-The output was:
-No such file or directory
-
-
-Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: CMAKE_CXX_COMPILER-NOTFOUND 
-Build flags: 
-Id flags: --c++ 
-
-The output was:
-No such file or directory
-
-
-Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: CMAKE_CXX_COMPILER-NOTFOUND 
-Build flags: 
-Id flags: --ec++ 
-
-The output was:
-No such file or directory
-
-
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/ryan/cs426/fstl/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e610c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e610c.dir/build.make CMakeFiles/cmTC_e610c.dir/build
-make[1]: Entering directory '/home/ryan/cs426/fstl/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e610c.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_e610c.dir/CheckSymbolExists.c.o   -c /home/ryan/cs426/fstl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_e610c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e610c.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e610c.dir/CheckSymbolExists.c.o  -o cmTC_e610c 
-CMakeFiles/cmTC_e610c.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_1c038/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1c038.dir/build.make CMakeFiles/cmTC_1c038.dir/build
+make[1]: Entering directory '/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1c038.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_1c038.dir/CheckSymbolExists.c.o   -c /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_1c038
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c038.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_1c038.dir/CheckSymbolExists.c.o  -o cmTC_1c038 
+CMakeFiles/cmTC_1c038.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_e610c.dir/build.make:97: recipe for target 'cmTC_e610c' failed
-make[1]: *** [cmTC_e610c] Error 1
-make[1]: Leaving directory '/home/ryan/cs426/fstl/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_e610c/fast' failed
-make: *** [cmTC_e610c/fast] Error 2
+CMakeFiles/cmTC_1c038.dir/build.make:97: recipe for target 'cmTC_1c038' failed
+make[1]: *** [cmTC_1c038] Error 1
+make[1]: Leaving directory '/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_1c038/fast' failed
+make: *** [cmTC_1c038/fast] Error 2
 
-File /home/ryan/cs426/fstl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -178,22 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/ryan/cs426/fstl/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_581da/fast"
-/usr/bin/make -f CMakeFiles/cmTC_581da.dir/build.make CMakeFiles/cmTC_581da.dir/build
-make[1]: Entering directory '/home/ryan/cs426/fstl/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_581da.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_581da.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_581da
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_581da.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_581da.dir/CheckFunctionExists.c.o  -o cmTC_581da -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_820f6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_820f6.dir/build.make CMakeFiles/cmTC_820f6.dir/build
+make[1]: Entering directory '/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_820f6.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_820f6.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_820f6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_820f6.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_820f6.dir/CheckFunctionExists.c.o  -o cmTC_820f6 -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_581da.dir/build.make:97: recipe for target 'cmTC_581da' failed
-make[1]: *** [cmTC_581da] Error 1
-make[1]: Leaving directory '/home/ryan/cs426/fstl/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_581da/fast' failed
-make: *** [cmTC_581da/fast] Error 2
+CMakeFiles/cmTC_820f6.dir/build.make:97: recipe for target 'cmTC_820f6' failed
+make[1]: *** [cmTC_820f6] Error 1
+make[1]: Leaving directory '/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_820f6/fast' failed
+make: *** [cmTC_820f6/fast] Error 2
 
 

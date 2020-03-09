@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ryan/cs426/fstl
+CMAKE_SOURCE_DIR = /home/ryan/cs426/Cylindrical-Slicer/C
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ryan/cs426/fstl/build
+CMAKE_BINARY_DIR = /home/ryan/cs426/Cylindrical-Slicer/C/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -94,7 +94,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ryan/cs426/fstl/build/CPackSourceConfig.cmake
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ryan/cs426/Cylindrical-Slicer/C/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -148,9 +148,9 @@ list_install_components/fast: list_install_components
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryan/cs426/fstl/build/CMakeFiles /home/ryan/cs426/fstl/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryan/cs426/fstl/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -190,11 +190,6 @@ fstl: cmake_check_build_system
 fstl/fast:
 	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/build
 .PHONY : fstl/fast
-
-# Manual pre-install relink rule for target.
-fstl/preinstall:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/preinstall
-.PHONY : fstl/preinstall
 
 #=============================================================================
 # Target rules for targets named fstl_autogen

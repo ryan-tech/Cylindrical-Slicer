@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ryan/cs426/fstl
+CMAKE_SOURCE_DIR = /home/ryan/cs426/Cylindrical-Slicer/C
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ryan/cs426/fstl/build
+CMAKE_BINARY_DIR = /home/ryan/cs426/Cylindrical-Slicer/C/build
 
 # Utility rule file for fstl_autogen.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/ryan/cs426/fstl/build
 include CMakeFiles/fstl_autogen.dir/progress.make
 
 CMakeFiles/fstl_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ryan/cs426/fstl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target fstl"
-	/usr/bin/cmake -E cmake_autogen /home/ryan/cs426/fstl/build/CMakeFiles/fstl_autogen.dir ""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target fstl"
+	/usr/bin/cmake -E cmake_autogen /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl_autogen.dir ""
 
 fstl_autogen: CMakeFiles/fstl_autogen
 fstl_autogen: CMakeFiles/fstl_autogen.dir/build.make
@@ -72,6 +72,6 @@ CMakeFiles/fstl_autogen.dir/clean:
 .PHONY : CMakeFiles/fstl_autogen.dir/clean
 
 CMakeFiles/fstl_autogen.dir/depend:
-	cd /home/ryan/cs426/fstl/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ryan/cs426/fstl /home/ryan/cs426/fstl /home/ryan/cs426/fstl/build /home/ryan/cs426/fstl/build /home/ryan/cs426/fstl/build/CMakeFiles/fstl_autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ryan/cs426/Cylindrical-Slicer/C/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ryan/cs426/Cylindrical-Slicer/C /home/ryan/cs426/Cylindrical-Slicer/C /home/ryan/cs426/Cylindrical-Slicer/C/build /home/ryan/cs426/Cylindrical-Slicer/C/build /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl_autogen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/fstl_autogen.dir/depend
 

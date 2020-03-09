@@ -34,7 +34,7 @@ Window::Window(QWidget *parent) :
     format.setProfile(QSurfaceFormat::CoreProfile);
 
     QSurfaceFormat::setDefaultFormat(format);
-    
+
     canvas = new Canvas(format, this);
     setCentralWidget(canvas);
 
@@ -69,9 +69,9 @@ Window::Window(QWidget *parent) :
                      this, &Window::on_load_recent);
 
     save_screenshot_action->setCheckable(false);
-    QObject::connect(save_screenshot_action, &QAction::triggered, 
+    QObject::connect(save_screenshot_action, &QAction::triggered,
         this, &Window::on_save_screenshot);
-    
+
     rebuild_recent_files();
 
     auto file_menu = menuBar()->addMenu("File");
@@ -133,11 +133,11 @@ void Window::on_about()
     QMessageBox::about(this, "",
         "<p align=\"center\"><b>fstl</b></p>"
         "<p>A fast viewer for <code>.stl</code> files.<br>"
-        "<a href=\"https://github.com/mkeeter/fstl\""
-        "   style=\"color: #93a1a1;\">https://github.com/mkeeter/fstl</a></p>"
-        "<p>© 2014-2017 Matthew Keeter<br>"
-        "<a href=\"mailto:matt.j.keeter@gmail.com\""
-        "   style=\"color: #93a1a1;\">matt.j.keeter@gmail.com</a></p>");
+        "<a href=\"https://github.com/ryan-tech/Cylindrical-Slicer\""
+        "   style=\"color: #93a1a1;\">https://github.com/ryan-tech/Cylindrical-Slicer</a></p>"
+        "<p><br>"
+        "<a href=\"mailto:rkim@nevada.unr.edu\""
+        "   style=\"color: #93a1a1;\">rkim@nevada.unr.edu</a></p>");
 }
 
 void Window::on_bad_stl()
@@ -263,7 +263,7 @@ void Window::on_save_screenshot()
 {
     const auto image = canvas->grabFramebuffer();
     auto file_name = QFileDialog::getSaveFileName(
-        this, 
+        this,
         tr("Save Screenshot Image"),
         QStandardPaths::standardLocations(QStandardPaths::StandardLocation::PicturesLocation).first(),
         "Images (*.png *.jpg)");
@@ -285,7 +285,7 @@ void Window::on_save_screenshot()
     {
         file_name.append(".png");
     }
-    
+
     const auto save_ok = image.save(file_name);
     if(!save_ok)
     {

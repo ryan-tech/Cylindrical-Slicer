@@ -16,8 +16,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/fstl.dir/fstl_autogen/mocs_compilation.cpp.o"
   "fstl.pdb"
   "fstl"
-  "fstl.pdb"
-  "CMakeFiles/CMakeRelink.dir/fstl"
 )
 
 # Per-language clean rules from dependency scanning.

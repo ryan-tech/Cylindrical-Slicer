@@ -6,71 +6,71 @@
 
 #IncludeRegexTransform: 
 
-/home/ryan/cs426/fstl/build/fstl_autogen/UVLADIE3JM/moc_app.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/build/fstl_autogen/UVLADIE3JM/moc_app.cpp
 ../../../src/app.h
-/home/ryan/cs426/fstl/src/app.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/app.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/ryan/cs426/fstl/build/fstl_autogen/UVLADIE3JM/moc_canvas.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/build/fstl_autogen/UVLADIE3JM/moc_canvas.cpp
 ../../../src/canvas.h
-/home/ryan/cs426/fstl/src/canvas.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/canvas.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/ryan/cs426/fstl/build/fstl_autogen/UVLADIE3JM/moc_loader.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/build/fstl_autogen/UVLADIE3JM/moc_loader.cpp
 ../../../src/loader.h
-/home/ryan/cs426/fstl/src/loader.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/loader.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/ryan/cs426/fstl/build/fstl_autogen/UVLADIE3JM/moc_window.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/build/fstl_autogen/UVLADIE3JM/moc_window.cpp
 ../../../src/window.h
-/home/ryan/cs426/fstl/src/window.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/window.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/ryan/cs426/fstl/build/fstl_autogen/mocs_compilation.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/build/fstl_autogen/mocs_compilation.cpp
 UVLADIE3JM/moc_app.cpp
-/home/ryan/cs426/fstl/build/fstl_autogen/UVLADIE3JM/moc_app.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/build/fstl_autogen/UVLADIE3JM/moc_app.cpp
 UVLADIE3JM/moc_canvas.cpp
-/home/ryan/cs426/fstl/build/fstl_autogen/UVLADIE3JM/moc_canvas.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/build/fstl_autogen/UVLADIE3JM/moc_canvas.cpp
 UVLADIE3JM/moc_loader.cpp
-/home/ryan/cs426/fstl/build/fstl_autogen/UVLADIE3JM/moc_loader.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/build/fstl_autogen/UVLADIE3JM/moc_loader.cpp
 UVLADIE3JM/moc_window.cpp
-/home/ryan/cs426/fstl/build/fstl_autogen/UVLADIE3JM/moc_window.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/build/fstl_autogen/UVLADIE3JM/moc_window.cpp
 
-/home/ryan/cs426/fstl/build/qrc_gl.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/build/qrc_gl.cpp
 
-/home/ryan/cs426/fstl/build/qrc_qt.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/build/qrc_qt.cpp
 
-/home/ryan/cs426/fstl/src/app.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/src/app.cpp
 QDebug
 -
 QFileOpenEvent
 -
 app.h
-/home/ryan/cs426/fstl/src/app.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/app.h
 window.h
-/home/ryan/cs426/fstl/src/window.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/window.h
 
-/home/ryan/cs426/fstl/src/app.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/app.h
 QApplication
 -
 
-/home/ryan/cs426/fstl/src/backdrop.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/src/backdrop.cpp
 backdrop.h
-/home/ryan/cs426/fstl/src/backdrop.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/backdrop.h
 
-/home/ryan/cs426/fstl/src/backdrop.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/backdrop.h
 QOpenGLBuffer
 -
 QOpenGLShaderProgram
@@ -78,21 +78,21 @@ QOpenGLShaderProgram
 QOpenGLFunctions
 -
 
-/home/ryan/cs426/fstl/src/canvas.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/src/canvas.cpp
 QMouseEvent
 -
 cmath
 -
 canvas.h
-/home/ryan/cs426/fstl/src/canvas.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/canvas.h
 backdrop.h
-/home/ryan/cs426/fstl/src/backdrop.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/backdrop.h
 glmesh.h
-/home/ryan/cs426/fstl/src/glmesh.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/glmesh.h
 mesh.h
-/home/ryan/cs426/fstl/src/mesh.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/mesh.h
 
-/home/ryan/cs426/fstl/src/canvas.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/canvas.h
 QtOpenGL
 -
 QSurfaceFormat
@@ -100,39 +100,39 @@ QSurfaceFormat
 QOpenGLShaderProgram
 -
 
-/home/ryan/cs426/fstl/src/glmesh.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/src/glmesh.cpp
 glmesh.h
-/home/ryan/cs426/fstl/src/glmesh.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/glmesh.h
 mesh.h
-/home/ryan/cs426/fstl/src/mesh.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/mesh.h
 
-/home/ryan/cs426/fstl/src/glmesh.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/glmesh.h
 QOpenGLBuffer
 -
 QOpenGLFunctions
 -
 
-/home/ryan/cs426/fstl/src/loader.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/src/loader.cpp
 future
 -
 loader.h
-/home/ryan/cs426/fstl/src/loader.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/loader.h
 vertex.h
-/home/ryan/cs426/fstl/src/vertex.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/vertex.h
 
-/home/ryan/cs426/fstl/src/loader.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/loader.h
 QThread
 -
 mesh.h
-/home/ryan/cs426/fstl/src/mesh.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/mesh.h
 
-/home/ryan/cs426/fstl/src/main.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/src/main.cpp
 QApplication
 -
 app.h
-/home/ryan/cs426/fstl/src/app.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/app.h
 
-/home/ryan/cs426/fstl/src/mesh.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/src/mesh.cpp
 QFile
 -
 QDataStream
@@ -142,9 +142,9 @@ QVector3D
 cmath
 -
 mesh.h
-/home/ryan/cs426/fstl/src/mesh.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/mesh.h
 
-/home/ryan/cs426/fstl/src/mesh.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/mesh.h
 QString
 -
 QtOpenGL/QtOpenGL
@@ -152,21 +152,21 @@ QtOpenGL/QtOpenGL
 vector
 -
 
-/home/ryan/cs426/fstl/src/vertex.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/vertex.h
 QtOpenGL/QtOpenGL
 -
 
-/home/ryan/cs426/fstl/src/window.cpp
+/home/ryan/cs426/Cylindrical-Slicer/C/src/window.cpp
 QMenuBar
 -
 window.h
-/home/ryan/cs426/fstl/src/window.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/window.h
 canvas.h
-/home/ryan/cs426/fstl/src/canvas.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/canvas.h
 loader.h
-/home/ryan/cs426/fstl/src/loader.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/loader.h
 
-/home/ryan/cs426/fstl/src/window.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/window.h
 QMainWindow
 -
 QActionGroup
