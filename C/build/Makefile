@@ -68,17 +68,17 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # Special rule for the target package
 package: preinstall
@@ -102,17 +102,17 @@ package_source/fast: package_source
 
 .PHONY : package_source/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -179,57 +179,57 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named fstl
+# Target rules for targets named Slicer
 
 # Build rule for target.
-fstl: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 fstl
-.PHONY : fstl
+Slicer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Slicer
+.PHONY : Slicer
 
 # fast build rule for target.
-fstl/fast:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/build
-.PHONY : fstl/fast
+Slicer/fast:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/build
+.PHONY : Slicer/fast
 
 #=============================================================================
-# Target rules for targets named fstl_autogen
+# Target rules for targets named Slicer_autogen
 
 # Build rule for target.
-fstl_autogen: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 fstl_autogen
-.PHONY : fstl_autogen
+Slicer_autogen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Slicer_autogen
+.PHONY : Slicer_autogen
 
 # fast build rule for target.
-fstl_autogen/fast:
-	$(MAKE) -f CMakeFiles/fstl_autogen.dir/build.make CMakeFiles/fstl_autogen.dir/build
-.PHONY : fstl_autogen/fast
+Slicer_autogen/fast:
+	$(MAKE) -f CMakeFiles/Slicer_autogen.dir/build.make CMakeFiles/Slicer_autogen.dir/build
+.PHONY : Slicer_autogen/fast
 
-fstl_autogen/mocs_compilation.o: fstl_autogen/mocs_compilation.cpp.o
+Slicer_autogen/mocs_compilation.o: Slicer_autogen/mocs_compilation.cpp.o
 
-.PHONY : fstl_autogen/mocs_compilation.o
+.PHONY : Slicer_autogen/mocs_compilation.o
 
 # target to build an object file
-fstl_autogen/mocs_compilation.cpp.o:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/fstl_autogen/mocs_compilation.cpp.o
-.PHONY : fstl_autogen/mocs_compilation.cpp.o
+Slicer_autogen/mocs_compilation.cpp.o:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.o
+.PHONY : Slicer_autogen/mocs_compilation.cpp.o
 
-fstl_autogen/mocs_compilation.i: fstl_autogen/mocs_compilation.cpp.i
+Slicer_autogen/mocs_compilation.i: Slicer_autogen/mocs_compilation.cpp.i
 
-.PHONY : fstl_autogen/mocs_compilation.i
+.PHONY : Slicer_autogen/mocs_compilation.i
 
 # target to preprocess a source file
-fstl_autogen/mocs_compilation.cpp.i:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/fstl_autogen/mocs_compilation.cpp.i
-.PHONY : fstl_autogen/mocs_compilation.cpp.i
+Slicer_autogen/mocs_compilation.cpp.i:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.i
+.PHONY : Slicer_autogen/mocs_compilation.cpp.i
 
-fstl_autogen/mocs_compilation.s: fstl_autogen/mocs_compilation.cpp.s
+Slicer_autogen/mocs_compilation.s: Slicer_autogen/mocs_compilation.cpp.s
 
-.PHONY : fstl_autogen/mocs_compilation.s
+.PHONY : Slicer_autogen/mocs_compilation.s
 
 # target to generate assembly for a file
-fstl_autogen/mocs_compilation.cpp.s:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/fstl_autogen/mocs_compilation.cpp.s
-.PHONY : fstl_autogen/mocs_compilation.cpp.s
+Slicer_autogen/mocs_compilation.cpp.s:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.s
+.PHONY : Slicer_autogen/mocs_compilation.cpp.s
 
 qrc_gl.o: qrc_gl.cpp.o
 
@@ -237,7 +237,7 @@ qrc_gl.o: qrc_gl.cpp.o
 
 # target to build an object file
 qrc_gl.cpp.o:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/qrc_gl.cpp.o
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/qrc_gl.cpp.o
 .PHONY : qrc_gl.cpp.o
 
 qrc_gl.i: qrc_gl.cpp.i
@@ -246,7 +246,7 @@ qrc_gl.i: qrc_gl.cpp.i
 
 # target to preprocess a source file
 qrc_gl.cpp.i:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/qrc_gl.cpp.i
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/qrc_gl.cpp.i
 .PHONY : qrc_gl.cpp.i
 
 qrc_gl.s: qrc_gl.cpp.s
@@ -255,7 +255,7 @@ qrc_gl.s: qrc_gl.cpp.s
 
 # target to generate assembly for a file
 qrc_gl.cpp.s:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/qrc_gl.cpp.s
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/qrc_gl.cpp.s
 .PHONY : qrc_gl.cpp.s
 
 qrc_qt.o: qrc_qt.cpp.o
@@ -264,7 +264,7 @@ qrc_qt.o: qrc_qt.cpp.o
 
 # target to build an object file
 qrc_qt.cpp.o:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/qrc_qt.cpp.o
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/qrc_qt.cpp.o
 .PHONY : qrc_qt.cpp.o
 
 qrc_qt.i: qrc_qt.cpp.i
@@ -273,7 +273,7 @@ qrc_qt.i: qrc_qt.cpp.i
 
 # target to preprocess a source file
 qrc_qt.cpp.i:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/qrc_qt.cpp.i
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/qrc_qt.cpp.i
 .PHONY : qrc_qt.cpp.i
 
 qrc_qt.s: qrc_qt.cpp.s
@@ -282,7 +282,7 @@ qrc_qt.s: qrc_qt.cpp.s
 
 # target to generate assembly for a file
 qrc_qt.cpp.s:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/qrc_qt.cpp.s
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/qrc_qt.cpp.s
 .PHONY : qrc_qt.cpp.s
 
 src/app.o: src/app.cpp.o
@@ -291,7 +291,7 @@ src/app.o: src/app.cpp.o
 
 # target to build an object file
 src/app.cpp.o:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/app.cpp.o
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/app.cpp.o
 .PHONY : src/app.cpp.o
 
 src/app.i: src/app.cpp.i
@@ -300,7 +300,7 @@ src/app.i: src/app.cpp.i
 
 # target to preprocess a source file
 src/app.cpp.i:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/app.cpp.i
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/app.cpp.i
 .PHONY : src/app.cpp.i
 
 src/app.s: src/app.cpp.s
@@ -309,7 +309,7 @@ src/app.s: src/app.cpp.s
 
 # target to generate assembly for a file
 src/app.cpp.s:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/app.cpp.s
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/app.cpp.s
 .PHONY : src/app.cpp.s
 
 src/backdrop.o: src/backdrop.cpp.o
@@ -318,7 +318,7 @@ src/backdrop.o: src/backdrop.cpp.o
 
 # target to build an object file
 src/backdrop.cpp.o:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/backdrop.cpp.o
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/backdrop.cpp.o
 .PHONY : src/backdrop.cpp.o
 
 src/backdrop.i: src/backdrop.cpp.i
@@ -327,7 +327,7 @@ src/backdrop.i: src/backdrop.cpp.i
 
 # target to preprocess a source file
 src/backdrop.cpp.i:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/backdrop.cpp.i
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/backdrop.cpp.i
 .PHONY : src/backdrop.cpp.i
 
 src/backdrop.s: src/backdrop.cpp.s
@@ -336,7 +336,7 @@ src/backdrop.s: src/backdrop.cpp.s
 
 # target to generate assembly for a file
 src/backdrop.cpp.s:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/backdrop.cpp.s
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/backdrop.cpp.s
 .PHONY : src/backdrop.cpp.s
 
 src/canvas.o: src/canvas.cpp.o
@@ -345,7 +345,7 @@ src/canvas.o: src/canvas.cpp.o
 
 # target to build an object file
 src/canvas.cpp.o:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/canvas.cpp.o
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/canvas.cpp.o
 .PHONY : src/canvas.cpp.o
 
 src/canvas.i: src/canvas.cpp.i
@@ -354,7 +354,7 @@ src/canvas.i: src/canvas.cpp.i
 
 # target to preprocess a source file
 src/canvas.cpp.i:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/canvas.cpp.i
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/canvas.cpp.i
 .PHONY : src/canvas.cpp.i
 
 src/canvas.s: src/canvas.cpp.s
@@ -363,7 +363,7 @@ src/canvas.s: src/canvas.cpp.s
 
 # target to generate assembly for a file
 src/canvas.cpp.s:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/canvas.cpp.s
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/canvas.cpp.s
 .PHONY : src/canvas.cpp.s
 
 src/glmesh.o: src/glmesh.cpp.o
@@ -372,7 +372,7 @@ src/glmesh.o: src/glmesh.cpp.o
 
 # target to build an object file
 src/glmesh.cpp.o:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/glmesh.cpp.o
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/glmesh.cpp.o
 .PHONY : src/glmesh.cpp.o
 
 src/glmesh.i: src/glmesh.cpp.i
@@ -381,7 +381,7 @@ src/glmesh.i: src/glmesh.cpp.i
 
 # target to preprocess a source file
 src/glmesh.cpp.i:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/glmesh.cpp.i
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/glmesh.cpp.i
 .PHONY : src/glmesh.cpp.i
 
 src/glmesh.s: src/glmesh.cpp.s
@@ -390,7 +390,7 @@ src/glmesh.s: src/glmesh.cpp.s
 
 # target to generate assembly for a file
 src/glmesh.cpp.s:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/glmesh.cpp.s
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/glmesh.cpp.s
 .PHONY : src/glmesh.cpp.s
 
 src/loader.o: src/loader.cpp.o
@@ -399,7 +399,7 @@ src/loader.o: src/loader.cpp.o
 
 # target to build an object file
 src/loader.cpp.o:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/loader.cpp.o
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/loader.cpp.o
 .PHONY : src/loader.cpp.o
 
 src/loader.i: src/loader.cpp.i
@@ -408,7 +408,7 @@ src/loader.i: src/loader.cpp.i
 
 # target to preprocess a source file
 src/loader.cpp.i:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/loader.cpp.i
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/loader.cpp.i
 .PHONY : src/loader.cpp.i
 
 src/loader.s: src/loader.cpp.s
@@ -417,7 +417,7 @@ src/loader.s: src/loader.cpp.s
 
 # target to generate assembly for a file
 src/loader.cpp.s:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/loader.cpp.s
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/loader.cpp.s
 .PHONY : src/loader.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -426,7 +426,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/main.cpp.o
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -435,7 +435,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/main.cpp.i
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -444,7 +444,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/main.cpp.s
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/mesh.o: src/mesh.cpp.o
@@ -453,7 +453,7 @@ src/mesh.o: src/mesh.cpp.o
 
 # target to build an object file
 src/mesh.cpp.o:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/mesh.cpp.o
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/mesh.cpp.o
 .PHONY : src/mesh.cpp.o
 
 src/mesh.i: src/mesh.cpp.i
@@ -462,7 +462,7 @@ src/mesh.i: src/mesh.cpp.i
 
 # target to preprocess a source file
 src/mesh.cpp.i:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/mesh.cpp.i
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/mesh.cpp.i
 .PHONY : src/mesh.cpp.i
 
 src/mesh.s: src/mesh.cpp.s
@@ -471,7 +471,7 @@ src/mesh.s: src/mesh.cpp.s
 
 # target to generate assembly for a file
 src/mesh.cpp.s:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/mesh.cpp.s
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/mesh.cpp.s
 .PHONY : src/mesh.cpp.s
 
 src/window.o: src/window.cpp.o
@@ -480,7 +480,7 @@ src/window.o: src/window.cpp.o
 
 # target to build an object file
 src/window.cpp.o:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/window.cpp.o
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/window.cpp.o
 .PHONY : src/window.cpp.o
 
 src/window.i: src/window.cpp.i
@@ -489,7 +489,7 @@ src/window.i: src/window.cpp.i
 
 # target to preprocess a source file
 src/window.cpp.i:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/window.cpp.i
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/window.cpp.i
 .PHONY : src/window.cpp.i
 
 src/window.s: src/window.cpp.s
@@ -498,7 +498,7 @@ src/window.s: src/window.cpp.s
 
 # target to generate assembly for a file
 src/window.cpp.s:
-	$(MAKE) -f CMakeFiles/fstl.dir/build.make CMakeFiles/fstl.dir/src/window.cpp.s
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/window.cpp.s
 .PHONY : src/window.cpp.s
 
 # Help Target
@@ -508,18 +508,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install"
+	@echo "... install/local"
 	@echo "... package"
 	@echo "... package_source"
-	@echo "... install/local"
-	@echo "... fstl"
+	@echo "... install"
+	@echo "... Slicer"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
-	@echo "... fstl_autogen"
-	@echo "... fstl_autogen/mocs_compilation.o"
-	@echo "... fstl_autogen/mocs_compilation.i"
-	@echo "... fstl_autogen/mocs_compilation.s"
+	@echo "... Slicer_autogen"
+	@echo "... Slicer_autogen/mocs_compilation.o"
+	@echo "... Slicer_autogen/mocs_compilation.i"
+	@echo "... Slicer_autogen/mocs_compilation.s"
 	@echo "... qrc_gl.o"
 	@echo "... qrc_gl.i"
 	@echo "... qrc_gl.s"

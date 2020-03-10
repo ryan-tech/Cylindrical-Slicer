@@ -29,7 +29,7 @@ Window::Window(QWidget *parent) :
     watcher(new QFileSystemWatcher(this))
 
 {
-    setWindowTitle("fstl");
+    setWindowTitle("Cylindrical Slicer")
     setAcceptDrops(true);
 
     QSurfaceFormat format;
@@ -143,8 +143,8 @@ void Window::on_open()
 void Window::on_about()
 {
     QMessageBox::about(this, "",
-        "<p align=\"center\"><b>fstl</b></p>"
-        "<p>A fast viewer for <code>.stl</code> files.<br>"
+        "<p align=\"center\"><b>Cylindrical Slicer About</b></p>"
+        "<p>A slicer for a cylindrical bed 3D printer.<br>"
         "<a href=\"https://github.com/ryan-tech/Cylindrical-Slicer\""
         "   style=\"color: #93a1a1;\">https://github.com/ryan-tech/Cylindrical-Slicer</a></p>"
         "<p>Email:<br>"
@@ -172,7 +172,7 @@ void Window::on_confusing_stl()
     QMessageBox::warning(this, "Warning",
                          "<b>Warning:</b><br>"
                          "This <code>.stl</code> file begins with <code>solid </code>but appears to be a binary file.<br>"
-                         "<code>fstl</code> loaded it, but other programs may be confused by this file.");
+                         "<code>Slicer</code> loaded it, but other programs may be confused by this file.");
 }
 
 void Window::on_missing_file()

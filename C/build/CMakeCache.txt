@@ -130,7 +130,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=fstl
+CMAKE_PROJECT_NAME:STATIC=slicer
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -239,10 +239,10 @@ Qt5Widgets_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets
 Qt5_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5
 
 //Value Computed by CMake
-fstl_BINARY_DIR:STATIC=/home/ryan/cs426/Cylindrical-Slicer/C/build
+slicer_BINARY_DIR:STATIC=/home/ryan/cs426/Cylindrical-Slicer/C/build
 
 //Value Computed by CMake
-fstl_SOURCE_DIR:STATIC=/home/ryan/cs426/Cylindrical-Slicer/C
+slicer_SOURCE_DIR:STATIC=/home/ryan/cs426/Cylindrical-Slicer/C
 
 
 ########################

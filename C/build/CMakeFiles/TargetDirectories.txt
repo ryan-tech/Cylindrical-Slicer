@@ -1,10 +1,10 @@
 /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/install/strip.dir
-/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/install.dir
+/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/install/local.dir
 /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/package.dir
 /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/package_source.dir
-/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/install/local.dir
-/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl.dir
+/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/install.dir
+/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir
 /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/edit_cache.dir
 /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/rebuild_cache.dir
 /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/list_install_components.dir
-/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/fstl_autogen.dir
+/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/Slicer_autogen.dir
