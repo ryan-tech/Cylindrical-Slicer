@@ -12,7 +12,7 @@ class Window : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit Window(QWidget* parent=0);
+    explicit Window(QWidget* parent= nullptr);
     bool load_stl(const QString& filename, bool is_reload=false);
     bool load_prev(void);
     bool load_next(void);
@@ -52,6 +52,11 @@ private:
     void build_folder_file_list();
     QPair<QString, QString> get_file_neighbors();
 
+
+    /* When creating actions, follow the naming scheme by following the name with an _action.
+     *
+     * Add a QAction* const variable here for the menu bar
+     * */
     QAction* const open_action;
     QAction* const about_action;
     QAction* const quit_action;
@@ -62,6 +67,8 @@ private:
     QAction* const reload_action;
     QAction* const autoreload_action;
     QAction* const save_screenshot_action;
+    QAction* const export_GCODE_action;
+    QAction* const slicer_action;
 
     QMenu* const recent_files;
     QActionGroup* const recent_files_group;

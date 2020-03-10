@@ -6,6 +6,9 @@
 
 const QString Window::RECENT_FILE_KEY = "recentFiles";
 
+/* Parameterized Constructor:
+ * Define Actions here (add actions in the window.h file)
+ * */
 Window::Window(QWidget *parent) :
     QMainWindow(parent),
     open_action(new QAction("Open", this)),
@@ -18,6 +21,8 @@ Window::Window(QWidget *parent) :
     reload_action(new QAction("Reload", this)),
     autoreload_action(new QAction("Autoreload", this)),
     save_screenshot_action(new QAction("Save Screenshot", this)),
+    export_GCODE_action(new QAction("Export GCODE", this)),
+    slicer_action(new QAction("Slicer", this)),
     recent_files(new QMenu("Open recent", this)),
     recent_files_group(new QActionGroup(this)),
     recent_files_clear_action(new QAction("Clear recent files", this)),
@@ -112,6 +117,13 @@ Window::Window(QWidget *parent) :
     QObject::connect(drawModes, &QActionGroup::triggered,
                      this, &Window::on_drawMode);
 
+    auto export_menu = menuBar()->addMenu("Export");
+    export_menu->addAction(export_GCODE_action);
+
+    auto slicer_menu = menuBar()->addMenu("Slice");
+    slicer_menu->addAction(slicer_action);
+
+
     auto help_menu = menuBar()->addMenu("Help");
     help_menu->addAction(about_action);
 
@@ -135,7 +147,7 @@ void Window::on_about()
         "<p>A fast viewer for <code>.stl</code> files.<br>"
         "<a href=\"https://github.com/ryan-tech/Cylindrical-Slicer\""
         "   style=\"color: #93a1a1;\">https://github.com/ryan-tech/Cylindrical-Slicer</a></p>"
-        "<p><br>"
+        "<p>Email:<br>"
         "<a href=\"mailto:rkim@nevada.unr.edu\""
         "   style=\"color: #93a1a1;\">rkim@nevada.unr.edu</a></p>");
 }
@@ -183,7 +195,7 @@ void Window::disable_open()
 void Window::set_watched(const QString& filename)
 {
     const auto files = watcher->files();
-    if (files.size())
+    if (files.size() == 0)
     {
         watcher->removePaths(watcher->files());
     }
@@ -305,7 +317,7 @@ void Window::rebuild_recent_files()
     }
     recent_files->clear();
 
-    for (auto f : files)
+    for (auto const &f : files)
     {
         const auto a = new QAction(f, recent_files);
         a->setData(f);
@@ -337,7 +349,7 @@ bool Window::load_stl(const QString& filename, bool is_reload)
 
     canvas->set_status("Loading " + filename);
 
-    Loader* loader = new Loader(this, filename, is_reload);
+    auto loader = new Loader(this, filename, is_reload);
     connect(loader, &Loader::started,
               this, &Window::disable_open);
 
