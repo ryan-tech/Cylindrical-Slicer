@@ -29,7 +29,7 @@ Window::Window(QWidget *parent) :
     watcher(new QFileSystemWatcher(this))
 
 {
-    setWindowTitle("Cylindrical Slicer")
+    setWindowTitle("Cylindrical Slicer");
     setAcceptDrops(true);
 
     QSurfaceFormat format;
