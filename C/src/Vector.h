@@ -11,6 +11,7 @@ struct Vector
 {
     Vector() {}
     Vector(float x, float y, float z) : x(x), y(y), z(z) {}
+    Vector(Vector& v) : x(v.x), y(v.y), z(v.z) {}
 
     GLfloat x, y, z;
     GLuint i=0;
