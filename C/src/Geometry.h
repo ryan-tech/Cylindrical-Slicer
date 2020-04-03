@@ -29,36 +29,16 @@ struct lineSegment
         }
     }
 };
-void flipSegment(lineSegment& l)
+
+struct Triangle
 {
-    lineSegment temp(l.end,l.start);
-    l.start = temp.start;
-    l.end = temp.end;
-}
+    Point a;
+	Point b;
+	Point c;
 
-bool operator==(lineSegment a, lineSegment b)
-{
-    if ((a.start == b.start) && (a.end == b.end))
-    {
-        return true;
-    }
-    if ((a.start == b.end) && (a.end == b.start))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-
-
-std::ostream& operator<<(std::ostream& os, const lineSegment& l)
-{
-    os << "(" << l.start << ", " << l.end << ")";
-    return os;
-}
+    Triangle() { }
+	Triangle(const Point& p1, const Point& p2, const Point& p3) : a(p1), b(p2), c(p3) { }
+};
 
 struct Plane
 {
@@ -105,6 +85,10 @@ struct Plane
             outSegTips.add(IntersectionPoint);
        }
     }
+    void TrianglePlaneIntersection(Triangle Tri, lineSegment& outSegTips)
+    {
+        TrianglePlaneIntersection(Tri.a, Tri.b, Tri.c, outSegTips);
+    }
     void planeFromPoints(Point a, Point b, Point c)
     {
         normal = normalized(crossProduct((b-a),(c-b)));
@@ -116,6 +100,116 @@ struct Plane
         return (d/e);
     }
 };
+
+struct SlicingCircle
+{
+    SlicingCircle () : radius(1.0f) {}
+    SlicingCircle (const float rad) : radius(rad) {}
+    //Angles are expressed in radians not degrees
+    std::vector<float> angles;
+    std::vector<Plane> slicingPlanes;
+    std::vector<Plane> leftBoundPlane;
+    std::vector<Plane> rightBoundPlane;
+    float radius;
+
+    void calcLayerRadius(float initialRadius, float layerHeight, int layer)
+    {
+        radius = ((layer*layerHeight)+initialRadius);
+    }
+
+    //Calculates and stores the angles
+    void setAngles(float spaceBetween)
+    {
+        float N = ((2*M_PI*radius)/spaceBetween);;
+        for (int i = 0; i < N; i++) {
+            angles.push_back((float)i * (float)((2*M_PI)/N));
+        }
+
+    }
+
+    //Calculates and stores the planes that will be use for intersections
+    void setPlanes(float spaceBetween)
+    {
+        float x1,x2,y1,y2;
+        Point a,b,c;
+        Plane p, leftBound, rightBound;
+        Point origin;
+        Point otherOrigin(0.0f,0.0f,5.0f);
+
+        float N = ((2*M_PI*radius)/spaceBetween);
+
+        for (int i = 0; i < N; i++) {
+            x1 = cos(angles[i]);
+            y1 = sin(angles[i]);
+
+            x2 = cos(angles[i+1]);
+            y2 = sin(angles[i+1]);
+
+            Point a(x1,y1,0.0f);
+            Point b(x2,y2,0.0f);
+            Point c(x2,y2,5.0f);
+
+            p.planeFromPoints(a,b,c);
+            p.distance = -radius;
+            slicingPlanes.push_back(p);
+
+            leftBound.planeFromPoints(origin,a,otherOrigin);
+            leftBoundPlane.push_back(leftBound);
+
+            rightBound.planeFromPoints(origin,b,otherOrigin);
+            rightBoundPlane.push_back(rightBound);
+        }
+    }
+};
+
+struct Polygon
+{
+    std::vector<lineSegment> path;
+};
+
+struct Layers
+{
+    int numLayer;
+    //std::vector<Triangle> triangles;
+    std::vector<lineSegment> segments;
+    SlicingCircle circle;
+
+    //These polygons have not been converted for g-code
+    std::vector<Polygon> catesianShapes;
+
+    //These polygons have not been converted for g-code
+    std::vector<Polygon> cylindricalShapes;
+};
+
+void flipSegment(lineSegment& l)
+{
+    lineSegment temp(l.end,l.start);
+    l.start = temp.start;
+    l.end = temp.end;
+}
+
+bool operator==(lineSegment a, lineSegment b)
+{
+    if ((a.start == b.start) && (a.end == b.end))
+    {
+        return true;
+    }
+    if ((a.start == b.end) && (a.end == b.start))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+std::ostream& operator<<(std::ostream& os, const lineSegment& l)
+{
+    os << "(" << l.start << ", " << l.end << ")";
+    return os;
+}
+
 std::ostream& operator<<(std::ostream& os, const Plane& p)
 {
     os << (p.normal).x << "x + " << (p.normal).y << "y + " << (p.normal).z << "z + " << p.distance << " = 0 ";
@@ -160,100 +254,5 @@ void subSegment(Plane& left, Plane& right, lineSegment& sublineSegment)
     }
 
 }
-
-struct Triangle
-{
-    Point a;
-	Point b;
-	Point c;
-
-    Triangle() { }
-	Triangle(const Point& p1, const Point& p2, const Point& p3) : a(p1), b(p2), c(p3) { }
-};
-
-struct SlicingCircle
-{
-    SlicingCircle () : radius(1.0f) {}
-    SlicingCircle (const float rad) : radius(rad) {}
-    //Angles are expressed in radians not degrees
-    std::vector<float> angles;
-    std::vector<Plane> slicingPlanes;
-    std::vector<Plane> leftBoundPlane;
-    std::vector<Plane> rightBoundPlane;
-    float radius;
-
-    void calcLayerRadius(float initialRadius, float layerHeight, int layer)
-    {
-        radius = ((layer*layerHeight)+initialRadius);
-    }
-
-    //Calculates and stores the angles
-    void setAngles(float spaceBetween)
-    {
-        float N = ((2*M_PI*radius)/spaceBetween);;
-        for (int i = 0; i < N; i++) {
-            angles.push_back((float)i * (float)((2*M_PI)/N));
-        }
-
-    }
-
-    //Calculates and stores the planes that will be use for intersections
-    void setPlanes(float spaceBetween, float length)
-    {
-        float x1,x2,y1,y2;
-        Point a,b,c;
-        Plane p, leftBound, rightBound;
-        Point origin;
-        Point otherOrigin(0.0f,0.0f,length);
-
-        float N = ((2*M_PI*radius)/spaceBetween);
-
-        for (int i = 0; i < N; i++) {
-            x1 = cos(angles[i]);
-            y1 = sin(angles[i]);
-
-            x2 = cos(angles[i+1]);
-            y2 = sin(angles[i+1]);
-
-            Point a(x1,y1,0.0f);
-            Point b(x2,y2,0.0f);
-            Point c(x2,y2,length);
-
-            p.planeFromPoints(a,b,c);
-            p.distance = radius;
-            slicingPlanes.push_back(p);
-
-            leftBound.planeFromPoints(origin,a,otherOrigin);
-            leftBoundPlane.push_back(leftBound);
-
-            rightBound.planeFromPoints(origin,b,otherOrigin);
-            rightBoundPlane.push_back(rightBound);
-        }
-    }
-};
-
-struct Polygon
-{
-    std::vector<lineSegment> path;
-};
-
-struct Layers
-{
-    int numLayer;
-    std::vector<Triangle> triangles;
-    std::vector<lineSegment> segments;
-    SlicingCircle circle;
-
-    //These polygons have not been converted for g-code
-    std::vector<Polygon> catesianShapes;
-
-    //These polygons have not been converted for g-code
-    std::vector<Polygon> cylindricalShapes;
-};
-
-
-
-
-
 
 #endif
