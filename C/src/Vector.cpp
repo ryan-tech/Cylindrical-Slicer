@@ -1,24 +1,28 @@
-#include "vectors.h"
+#include "Vector.h"
 #include <cmath>
 
 Vector operator+(const Vector& a, const Vector& b)
 {
-    return Vector((a.x + b.x),(a.y + b.y),(a.z + b.z));
+    Vector c((a.x + b.x),(a.y + b.y),(a.z + b.z));
+    return c;
 }
 
 Vector operator-(const Vector& a, const Vector& b)
 {
-    return Vector((a.x - b.x),(a.y - b.y),(a.z - b.z));
+    Vector c((a.x - b.x),(a.y - b.y),(a.z - b.z));
+    return c;
 }
 
 Vector operator*(const Vector& v, float c)
 {
-    return Vector((c * v.x),(c * v.y),(c * v.z));
+    Vector vec((c * v.x),(c * v.y),(c * v.z));
+    return vec;
 }
 
 Vector operator/(const Vector& v, float c)
 {
-    return Vector((v.x / c),(v.y / c),(v.z / c));
+    Vector vec((v.x / c),(v.y / c),(v.z / c));
+    return vec;
 }
 
 std::ostream& operator<<(std::ostream& os, const Vector& v)
@@ -42,7 +46,7 @@ float dotProduct(const Vector& a, const Vector& b)
     return ((a.x * b.x) + (a.y * b.y) + (a.z * b.z));
 }
 
-float crossProduct(const Vector& a, const Vector& b)
+Vector crossProduct(const Vector& a, const Vector& b)
 {
     Vector result;
     result.x = (a.y * b.z) - (a.z * b.y);
@@ -61,12 +65,14 @@ float calcMagnitude(const Vector& v)
     return sqrtf(dotProduct(v,v));
 }
 
-void normalize(const Vector& v)
+void normalize(Vector& v)
 {
     v = v * (1.0f / calcMagnitude(v));
 }
 
 Vector normalized(const Vector& v)
 {
-    return normalize(v); 
+    Vector temp;
+    temp = v * (1.0f / calcMagnitude(v));
+    return temp;
 }
