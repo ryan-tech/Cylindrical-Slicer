@@ -19,10 +19,22 @@ Vector operator*(const Vector& v, float c)
     return vec;
 }
 
+Vector operator*(const Vector& l, const Vector& r)
+{
+    Vector result(l.x * r.x, l.y * r.y, l.z * r.z);
+    return result;
+}
+
 Vector operator/(const Vector& v, float c)
 {
     Vector vec((v.x / c),(v.y / c),(v.z / c));
     return vec;
+}
+
+Vector operator/(const Vector& l, const Vector& r)
+{
+    Vector result(l.x / r.x, l.y / r.y, l.z / r.z);
+    return result;
 }
 
 std::ostream& operator<<(std::ostream& os, const Vector& v)
