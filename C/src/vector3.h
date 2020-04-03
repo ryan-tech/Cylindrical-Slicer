@@ -74,6 +74,18 @@ struct Vector3
         return Vector3(((rhs.y * this->z) - (rhs.z * this->y)), ((rhs.z * this->x) - (rhs.x * this->z)), ((rhs.x * this->y) - (rhs.y * this->x)) );
     }
 
+    float calcMagnitude(const Vector3& rhs)
+    {
+        return sqrtf(dotProduct(rhs));
+    }
+
+    Vector3 normalize(Vector3& rhs)
+    {
+        Vector3 n;
+        n = rhs * (1.0f / calcMagnitude(rhs));
+        return n;
+    }
+
 };
 
 #endif
