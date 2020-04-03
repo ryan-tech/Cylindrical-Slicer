@@ -1,7 +1,7 @@
 #ifndef VEC3_H
 #define VEC3_H
 
-#include <QtOpenGL/QtOpenGL>
+//#include <QtOpenGL/QtOpenGL>
 #include <ostream>
 
 /*
@@ -29,6 +29,8 @@ Vector operator+(const Vector& a, const Vector& b);
 Vector operator-(const Vector& a, const Vector& b);
 Vector operator*(const Vector& v, float c);
 Vector operator/(const Vector& v, float c);
+Vector operator*(const Vector& l, const Vector& r);
+Vector operator/(const Vector& l, const Vector& r);
 
 std::ostream& operator<<(std::ostream& os, const Vector& v);
 
