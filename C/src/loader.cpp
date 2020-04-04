@@ -1,7 +1,7 @@
 #include <future>
 
 #include "loader.h"
-#include "vector3.h"
+#include "Vector.h"
 
 Loader::Loader(QObject* parent, const QString& filename, bool is_reload)
     : QThread(parent), filename(filename), is_reload(is_reload)
@@ -29,7 +29,7 @@ void Loader::run()
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void parallel_sort(Vector3* begin, Vector3* end, int threads)
+void parallel_sort(Vector* begin, Vector* end, int threads)
 {
     if (threads < 2 || end - begin < 2)
     {
@@ -55,7 +55,7 @@ void parallel_sort(Vector3* begin, Vector3* end, int threads)
     }
 }
 
-Mesh* mesh_from_verts(uint32_t tri_count, QVector<Vector3>& verts)
+Mesh* mesh_from_verts(uint32_t tri_count, QVector<Vector>& verts)
 {
     // Save indicies as the second element in the array
     // (so that we can reconstruct triangle order after sorting)
@@ -158,7 +158,7 @@ Mesh* Loader::read_stl_binary(QFile& file)
     }
 
     // Extract vertices into an array of xyz, unsigned pairs
-    QVector<Vector3> verts(tri_count*3);
+    QVector<Vector> verts(tri_count*3);
 
     // Dummy array, because readRawData is faster than skipRawData
     std::unique_ptr<uint8_t> buffer(new uint8_t[tri_count * 50]);
@@ -191,7 +191,7 @@ Mesh* Loader::read_stl_ascii(QFile& file)
 {
     file.readLine();
     uint32_t tri_count = 0;
-    QVector<Vector3> verts(tri_count*3);
+    QVector<Vector> verts(tri_count*3);
 
     bool okay = true;
     while (!file.atEnd() && okay)
@@ -219,7 +219,7 @@ Mesh* Loader::read_stl_ascii(QFile& file)
             const float x = line[1].toFloat(&okay);
             const float y = line[2].toFloat(&okay);
             const float z = line[3].toFloat(&okay);
-            verts.push_back(Vector3(x, y, z));
+            verts.push_back(Vector(x, y, z));
         }
         if (!file.readLine().trimmed().startsWith("endloop") ||
             !file.readLine().trimmed().startsWith("endfacet"))
