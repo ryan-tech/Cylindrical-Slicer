@@ -1,9 +1,7 @@
 #include <QFile>
 #include <QDataStream>
 #include <QVector3D>
-
 #include <cmath>
-
 #include "mesh.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -12,6 +10,16 @@ Mesh::Mesh(std::vector<GLfloat>&& v, std::vector<GLuint>&& i)
     : vertices(std::move(v)), indices(std::move(i))
 {
     // Nothing to do here
+}
+
+std::vector<GLfloat> Mesh::get_vertices() const
+{
+  return vertices;
+}
+
+std::vector<GLuint> Mesh::get_indices() const
+{
+  return indices;
 }
 
 float Mesh::min(size_t start) const

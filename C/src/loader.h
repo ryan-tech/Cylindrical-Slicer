@@ -14,7 +14,7 @@ public:
 
 protected:
     Mesh* load_stl();
-
+    //Mesh* combine_mesh(const Mesh*& left, const Mesh*& right);
     /*  Reads an ASCII stl, starting from the start of the file*/
     Mesh* read_stl_ascii(QFile& file);
     /*  Reads a binary stl, assuming we're at the end of the header */
@@ -30,7 +30,7 @@ signals:
     void error_missing_file();
 
 private:
-    const QString filename;
+    QString filename;
     bool is_reload;
 
     /*  Used to warn on binary STLs that begin with the word 'solid'" */

@@ -66,7 +66,7 @@ void Canvas::load_mesh(Mesh* m, bool is_reload)
         scale = 2 / (upper - lower).length();
 
         // Reset other camera parameters
-        zoom = 1;
+        zoom = .5;
         yaw = 0;
         tilt = 90;
     }

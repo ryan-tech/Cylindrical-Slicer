@@ -9,6 +9,28 @@ Loader::Loader(QObject* parent, const QString& filename, bool is_reload)
     // Nothing to do here
 }
 
+Mesh* combine_mesh(Mesh* left, Mesh* right)
+{
+  std::vector<GLfloat> left_vertices = left->get_vertices();
+  std::vector<GLfloat> right_vertices = right->get_vertices();
+
+  std::vector<GLuint> left_indices = left->get_indices();
+  std::vector<GLuint> right_indices = right->get_indices();
+
+  std::vector<GLfloat> combined_vertices;
+  std::vector<GLuint> combined_indices;
+
+  combined_vertices.reserve(left_vertices.size()+right_vertices.size());
+  combined_vertices.insert(combined_vertices.end(), left_vertices.begin(), left_vertices.end() );
+  combined_vertices.insert(combined_vertices.end(), right_vertices.begin(), right_vertices.end() );
+
+  combined_indices.reserve(left_indices.size()+right_indices.size());
+  combined_indices.insert(combined_indices.end(), left_indices.begin(), left_indices.end() );
+  combined_indices.insert(combined_indices.end(), right_indices.begin(), right_indices.end() );
+
+  return new Mesh(std::move(combined_vertices), std::move(combined_indices));
+}
+
 void Loader::run()
 {
     Mesh* mesh = load_stl();
@@ -21,10 +43,29 @@ void Loader::run()
         }
         else
         {
-            emit got_mesh(mesh, is_reload);
+            //emit got_mesh(mesh, is_reload);
             emit loaded_file(filename);
         }
     }
+    QString temp = filename;
+    QString temp2 = ":gl/bed.stl";
+    filename = temp2;
+    Mesh* bed_mesh = load_stl();
+    if (bed_mesh)
+    {
+        if (bed_mesh->empty())
+        {
+            emit error_empty_mesh();
+            delete bed_mesh;
+        }
+        else
+        {
+          Mesh* combined_mesh = combine_mesh(bed_mesh, mesh);
+          emit got_mesh(combined_mesh, is_reload);
+          emit loaded_file(filename);
+        }
+    }
+    filename = temp;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -57,7 +98,7 @@ void parallel_sort(Vector3* begin, Vector3* end, int threads)
 
 Mesh* mesh_from_verts(uint32_t tri_count, QVector<Vector3>& verts)
 {
-    // Save indicies as the second element in the array
+    // Save indices as the second element in the array
     // (so that we can reconstruct triangle order after sorting)
     for (size_t i=0; i < tri_count*3; ++i)
     {
@@ -240,4 +281,3 @@ Mesh* Loader::read_stl_ascii(QFile& file)
         return NULL;
     }
 }
-

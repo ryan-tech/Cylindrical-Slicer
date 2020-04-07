@@ -6,5 +6,6 @@
         <file>quad.frag</file>
         <file>quad.vert</file>
         <file>sphere.stl</file>
+        <file>bed.stl</file>
     </qresource>
 </RCC>
