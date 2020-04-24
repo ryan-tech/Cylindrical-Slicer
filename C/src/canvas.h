@@ -25,7 +25,7 @@ public:
 public slots:
     void set_status(const QString& s);
     void clear_status();
-    void load_mesh(Mesh* m, bool is_reload);
+    void load_mesh(Mesh* m, Mesh* b, bool is_reload);
 
 protected:
 	void paintGL() override;
@@ -42,7 +42,7 @@ protected:
     void view_anim(float v);
 
 private:
-    void draw_mesh();
+    void draw_mesh(GLMesh* m);
 
     QMatrix4x4 transform_matrix() const;
     QMatrix4x4 view_matrix() const;
@@ -52,6 +52,7 @@ private:
 	QOpenGLShaderProgram quad_shader;
 
     GLMesh* mesh;
+    GLMesh* bedMesh;
     Backdrop* backdrop;
 
     QVector3D center;

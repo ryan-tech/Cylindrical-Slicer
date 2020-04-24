@@ -115,10 +115,12 @@ QOpenGLFunctions
 /home/ryan/cs426/Cylindrical-Slicer/C/src/loader.cpp
 future
 -
+iostream
+-
 loader.h
 /home/ryan/cs426/Cylindrical-Slicer/C/src/loader.h
-vector3.h
-/home/ryan/cs426/Cylindrical-Slicer/C/src/vector3.h
+vertex.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/vertex.h
 
 /home/ryan/cs426/Cylindrical-Slicer/C/src/loader.h
 QThread
@@ -152,12 +154,8 @@ QtOpenGL/QtOpenGL
 vector
 -
 
-/home/ryan/cs426/Cylindrical-Slicer/C/src/vector3.h
+/home/ryan/cs426/Cylindrical-Slicer/C/src/vertex.h
 QtOpenGL/QtOpenGL
--
-iostream
--
-cmath
 -
 
 /home/ryan/cs426/Cylindrical-Slicer/C/src/window.cpp

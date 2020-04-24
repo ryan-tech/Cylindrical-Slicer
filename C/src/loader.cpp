@@ -1,39 +1,39 @@
 #include <future>
-
+#include <iostream>
+#include <utility>
 #include "loader.h"
-#include "Vector.h"
+#include "vertex.h"
 
-Loader::Loader(QObject* parent, const QString& filename, bool is_reload)
-    : QThread(parent), filename(filename), is_reload(is_reload)
+Loader::Loader(QObject* parent, QString  filename, bool is_reload)
+        : QThread(parent), filename(std::move(filename)), is_reload(is_reload)
 {
-    // Nothing to do here
-}
 
-Mesh* combine_mesh(Mesh* left, Mesh* right)
-{
-  std::vector<GLfloat> left_vertices = left->get_vertices();
-  std::vector<GLfloat> right_vertices = right->get_vertices();
-
-  std::vector<GLuint> left_indices = left->get_indices();
-  std::vector<GLuint> right_indices = right->get_indices();
-
-  std::vector<GLfloat> combined_vertices;
-  std::vector<GLuint> combined_indices;
-
-  combined_vertices.reserve(left_vertices.size()+right_vertices.size());
-  combined_vertices.insert(combined_vertices.end(), left_vertices.begin(), left_vertices.end() );
-  combined_vertices.insert(combined_vertices.end(), right_vertices.begin(), right_vertices.end() );
-
-  combined_indices.reserve(left_indices.size()+right_indices.size());
-  combined_indices.insert(combined_indices.end(), left_indices.begin(), left_indices.end() );
-  combined_indices.insert(combined_indices.end(), right_indices.begin(), right_indices.end() );
-
-  return new Mesh(std::move(combined_vertices), std::move(combined_indices));
 }
 
 void Loader::run()
 {
     Mesh* mesh = load_stl();
+    QString temp = filename;
+    QString temp2 = ":/gl/bed.stl";
+    filename = temp2;
+    Mesh* bed_mesh = load_stl();
+    if (bed_mesh)
+    {
+        if (bed_mesh->empty())
+        {
+            std::cout<<"Empty bed mesh"<<std::endl;
+            emit error_empty_mesh();
+            delete bed_mesh;
+        }
+        else
+        {
+          emit loaded_file(filename);
+          std::string utf8_text = filename.toUtf8().constData();
+          std::cout<<utf8_text<<std::endl;
+        }
+    }
+    filename = temp;
+
     if (mesh)
     {
         if (mesh->empty())
@@ -43,34 +43,15 @@ void Loader::run()
         }
         else
         {
-            //emit got_mesh(mesh, is_reload);
+            emit got_mesh(mesh, bed_mesh, is_reload);
             emit loaded_file(filename);
         }
     }
-    QString temp = filename;
-    QString temp2 = ":gl/bed.stl";
-    filename = temp2;
-    Mesh* bed_mesh = load_stl();
-    if (bed_mesh)
-    {
-        if (bed_mesh->empty())
-        {
-            emit error_empty_mesh();
-            delete bed_mesh;
-        }
-        else
-        {
-          Mesh* combined_mesh = combine_mesh(bed_mesh, mesh);
-          emit got_mesh(combined_mesh, is_reload);
-          emit loaded_file(filename);
-        }
-    }
-    filename = temp;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void parallel_sort(Vector* begin, Vector* end, int threads)
+void parallel_sort(Vertex* begin, Vertex* end, int threads)
 {
     if (threads < 2 || end - begin < 2)
     {
@@ -96,9 +77,9 @@ void parallel_sort(Vector* begin, Vector* end, int threads)
     }
 }
 
-Mesh* mesh_from_verts(uint32_t tri_count, QVector<Vector>& verts)
+Mesh* mesh_from_verts(uint32_t tri_count, QVector<Vertex>& verts)
 {
-    // Save indices as the second element in the array
+    // Save indicies as the second element in the array
     // (so that we can reconstruct triangle order after sorting)
     for (size_t i=0; i < tri_count*3; ++i)
     {
@@ -154,7 +135,7 @@ Mesh* Loader::load_stl()
     if (!file.open(QIODevice::ReadOnly))
     {
         emit error_missing_file();
-        return NULL;
+        return nullptr;
     }
 
     // First, try to read the stl as an ASCII file
@@ -195,11 +176,11 @@ Mesh* Loader::read_stl_binary(QFile& file)
     if (file.size() != 84 + tri_count*50)
     {
         emit error_bad_stl();
-        return NULL;
+        return nullptr;
     }
 
     // Extract vertices into an array of xyz, unsigned pairs
-    QVector<Vector> verts(tri_count*3);
+    QVector<Vertex> verts(tri_count*3);
 
     // Dummy array, because readRawData is faster than skipRawData
     std::unique_ptr<uint8_t> buffer(new uint8_t[tri_count * 50]);
@@ -232,7 +213,7 @@ Mesh* Loader::read_stl_ascii(QFile& file)
 {
     file.readLine();
     uint32_t tri_count = 0;
-    QVector<Vector> verts(tri_count*3);
+    QVector<Vertex> verts(tri_count*3);
 
     bool okay = true;
     while (!file.atEnd() && okay)
@@ -260,7 +241,7 @@ Mesh* Loader::read_stl_ascii(QFile& file)
             const float x = line[1].toFloat(&okay);
             const float y = line[2].toFloat(&okay);
             const float z = line[3].toFloat(&okay);
-            verts.push_back(Vector(x, y, z));
+            verts.push_back(Vertex(x, y, z));
         }
         if (!file.readLine().trimmed().startsWith("endloop") ||
             !file.readLine().trimmed().startsWith("endfacet"))
@@ -278,6 +259,6 @@ Mesh* Loader::read_stl_ascii(QFile& file)
     else
     {
         emit error_bad_stl();
-        return NULL;
+        return nullptr;
     }
 }

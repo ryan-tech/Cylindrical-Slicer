@@ -1636,7 +1636,7 @@ CMakeFiles/Slicer.dir/src/glmesh.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidg
 CMakeFiles/Slicer.dir/src/loader.cpp.o: ../src/loader.cpp
 CMakeFiles/Slicer.dir/src/loader.cpp.o: ../src/loader.h
 CMakeFiles/Slicer.dir/src/loader.cpp.o: ../src/mesh.h
-CMakeFiles/Slicer.dir/src/loader.cpp.o: ../src/vector3.h
+CMakeFiles/Slicer.dir/src/loader.cpp.o: ../src/vertex.h
 CMakeFiles/Slicer.dir/src/loader.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent
 CMakeFiles/Slicer.dir/src/loader.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/Slicer.dir/src/loader.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins

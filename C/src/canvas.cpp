@@ -24,6 +24,7 @@ Canvas::~Canvas()
 {
 	makeCurrent();
 	delete mesh;
+	delete bedMesh;
 	doneCurrent();
 }
 
@@ -54,9 +55,10 @@ void Canvas::draw_wireframe()
     set_drawMode(1);
 }
 
-void Canvas::load_mesh(Mesh* m, bool is_reload)
+void Canvas::load_mesh(Mesh* m, Mesh* b, bool is_reload)
 {
     mesh = new GLMesh(m);
+    bedMesh = new GLMesh(b);
 
     if (!is_reload)
     {
@@ -71,7 +73,7 @@ void Canvas::load_mesh(Mesh* m, bool is_reload)
         tilt = 90;
     }
 
-    update();
+//    update();
 
     delete m;
 }
@@ -122,7 +124,12 @@ void Canvas::paintGL()
 	glEnable(GL_DEPTH_TEST);
 
 	backdrop->draw();
-	if (mesh)  draw_mesh();
+
+    if (mesh)
+    {
+        draw_mesh(mesh);
+        draw_mesh(bedMesh);
+    }
 
 	if (status.isNull())  return;
 
@@ -131,7 +138,7 @@ void Canvas::paintGL()
 	painter.drawText(10, height() - 10, status);
 }
 
-void Canvas::draw_mesh()
+void Canvas::draw_mesh(GLMesh* m)
 {
     QOpenGLShaderProgram* selected_mesh_shader = NULL;
     // Set gl draw mode
@@ -164,7 +171,7 @@ void Canvas::draw_mesh()
     glEnableVertexAttribArray(vp);
 
     // Then draw the mesh with that vertex position
-    mesh->draw(vp);
+    m->draw(vp);
 
     // Reset draw mode for the background and anything else that needs to be drawn
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);

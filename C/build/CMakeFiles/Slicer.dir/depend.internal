@@ -1637,7 +1637,7 @@ CMakeFiles/Slicer.dir/src/loader.cpp.o
  /home/ryan/cs426/Cylindrical-Slicer/C/src/loader.cpp
  /home/ryan/cs426/Cylindrical-Slicer/C/src/loader.h
  /home/ryan/cs426/Cylindrical-Slicer/C/src/mesh.h
- /home/ryan/cs426/Cylindrical-Slicer/C/src/vector3.h
+ /home/ryan/cs426/Cylindrical-Slicer/C/src/vertex.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins

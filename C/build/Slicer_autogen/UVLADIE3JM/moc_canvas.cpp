@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Canvas_t {
-    QByteArrayData data[10];
-    char stringdata0[74];
+    QByteArrayData data[11];
+    char stringdata0[76];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,12 +39,13 @@ QT_MOC_LITERAL(4, 21, 12), // "clear_status"
 QT_MOC_LITERAL(5, 34, 9), // "load_mesh"
 QT_MOC_LITERAL(6, 44, 5), // "Mesh*"
 QT_MOC_LITERAL(7, 50, 1), // "m"
-QT_MOC_LITERAL(8, 52, 9), // "is_reload"
-QT_MOC_LITERAL(9, 62, 11) // "perspective"
+QT_MOC_LITERAL(8, 52, 1), // "b"
+QT_MOC_LITERAL(9, 54, 9), // "is_reload"
+QT_MOC_LITERAL(10, 64, 11) // "perspective"
 
     },
     "Canvas\0set_status\0\0s\0clear_status\0"
-    "load_mesh\0Mesh*\0m\0is_reload\0perspective"
+    "load_mesh\0Mesh*\0m\0b\0is_reload\0perspective"
 };
 #undef QT_MOC_LITERAL
 
@@ -55,7 +56,7 @@ static const uint qt_meta_data_Canvas[] = {
        0,       // classname
        0,    0, // classinfo
        3,   14, // methods
-       1,   38, // properties
+       1,   40, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -64,15 +65,15 @@ static const uint qt_meta_data_Canvas[] = {
  // slots: name, argc, parameters, tag, flags
        1,    1,   29,    2, 0x0a /* Public */,
        4,    0,   32,    2, 0x0a /* Public */,
-       5,    2,   33,    2, 0x0a /* Public */,
+       5,    3,   33,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 6, QMetaType::Bool,    7,    8,
+    QMetaType::Void, 0x80000000 | 6, 0x80000000 | 6, QMetaType::Bool,    7,    8,    9,
 
  // properties: name, type, flags
-       9, QMetaType::Float, 0x00095003,
+      10, QMetaType::Float, 0x00095003,
 
        0        // eod
 };
@@ -85,7 +86,7 @@ void Canvas::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         switch (_id) {
         case 0: _t->set_status((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 1: _t->clear_status(); break;
-        case 2: _t->load_mesh((*reinterpret_cast< Mesh*(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 2: _t->load_mesh((*reinterpret_cast< Mesh*(*)>(_a[1])),(*reinterpret_cast< Mesh*(*)>(_a[2])),(*reinterpret_cast< bool(*)>(_a[3]))); break;
         default: ;
         }
     }

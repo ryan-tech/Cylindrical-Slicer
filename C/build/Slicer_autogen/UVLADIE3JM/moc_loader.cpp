@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Loader_t {
-    QByteArrayData data[12];
-    char stringdata0[128];
+    QByteArrayData data[13];
+    char stringdata0[130];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,15 +38,16 @@ QT_MOC_LITERAL(3, 20, 8), // "filename"
 QT_MOC_LITERAL(4, 29, 8), // "got_mesh"
 QT_MOC_LITERAL(5, 38, 5), // "Mesh*"
 QT_MOC_LITERAL(6, 44, 1), // "m"
-QT_MOC_LITERAL(7, 46, 9), // "is_reload"
-QT_MOC_LITERAL(8, 56, 13), // "error_bad_stl"
-QT_MOC_LITERAL(9, 70, 16), // "error_empty_mesh"
-QT_MOC_LITERAL(10, 87, 21), // "warning_confusing_stl"
-QT_MOC_LITERAL(11, 109, 18) // "error_missing_file"
+QT_MOC_LITERAL(7, 46, 1), // "b"
+QT_MOC_LITERAL(8, 48, 9), // "is_reload"
+QT_MOC_LITERAL(9, 58, 13), // "error_bad_stl"
+QT_MOC_LITERAL(10, 72, 16), // "error_empty_mesh"
+QT_MOC_LITERAL(11, 89, 21), // "warning_confusing_stl"
+QT_MOC_LITERAL(12, 111, 18) // "error_missing_file"
 
     },
     "Loader\0loaded_file\0\0filename\0got_mesh\0"
-    "Mesh*\0m\0is_reload\0error_bad_stl\0"
+    "Mesh*\0m\0b\0is_reload\0error_bad_stl\0"
     "error_empty_mesh\0warning_confusing_stl\0"
     "error_missing_file"
 };
@@ -67,15 +68,15 @@ static const uint qt_meta_data_Loader[] = {
 
  // signals: name, argc, parameters, tag, flags
        1,    1,   44,    2, 0x06 /* Public */,
-       4,    2,   47,    2, 0x06 /* Public */,
-       8,    0,   52,    2, 0x06 /* Public */,
-       9,    0,   53,    2, 0x06 /* Public */,
-      10,    0,   54,    2, 0x06 /* Public */,
-      11,    0,   55,    2, 0x06 /* Public */,
+       4,    3,   47,    2, 0x06 /* Public */,
+       9,    0,   54,    2, 0x06 /* Public */,
+      10,    0,   55,    2, 0x06 /* Public */,
+      11,    0,   56,    2, 0x06 /* Public */,
+      12,    0,   57,    2, 0x06 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
-    QMetaType::Void, 0x80000000 | 5, QMetaType::Bool,    6,    7,
+    QMetaType::Void, 0x80000000 | 5, 0x80000000 | 5, QMetaType::Bool,    6,    7,    8,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -91,7 +92,7 @@ void Loader::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->loaded_file((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 1: _t->got_mesh((*reinterpret_cast< Mesh*(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 1: _t->got_mesh((*reinterpret_cast< Mesh*(*)>(_a[1])),(*reinterpret_cast< Mesh*(*)>(_a[2])),(*reinterpret_cast< bool(*)>(_a[3]))); break;
         case 2: _t->error_bad_stl(); break;
         case 3: _t->error_empty_mesh(); break;
         case 4: _t->warning_confusing_stl(); break;
@@ -108,7 +109,7 @@ void Loader::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
             }
         }
         {
-            typedef void (Loader::*_t)(Mesh * , bool );
+            typedef void (Loader::*_t)(Mesh * , Mesh * , bool );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Loader::got_mesh)) {
                 *result = 1;
                 return;
@@ -189,9 +190,9 @@ void Loader::loaded_file(QString _t1)
 }
 
 // SIGNAL 1
-void Loader::got_mesh(Mesh * _t1, bool _t2)
+void Loader::got_mesh(Mesh * _t1, Mesh * _t2, bool _t3)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 

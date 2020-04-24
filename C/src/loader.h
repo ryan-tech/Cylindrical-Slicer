@@ -9,7 +9,7 @@ class Loader : public QThread
 {
     Q_OBJECT
 public:
-    explicit Loader(QObject* parent, const QString& filename, bool is_reload);
+    explicit Loader(QObject* parent, QString  filename, bool is_reload);
     void run();
 
 protected:
@@ -22,8 +22,7 @@ protected:
 
 signals:
     void loaded_file(QString filename);
-    void got_mesh(Mesh* m, bool is_reload);
-
+    void got_mesh(Mesh* m, Mesh* b, bool is_reload);
     void error_bad_stl();
     void error_empty_mesh();
     void warning_confusing_stl();
