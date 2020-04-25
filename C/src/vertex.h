@@ -2,6 +2,7 @@
 #define VEC3_H
 
 #include <QtOpenGL/QtOpenGL>
+#include <cmath>
 
 /*
  *  Represents an optionally-indexed vertex in space
@@ -25,6 +26,29 @@ struct Vertex
         else if (z != rhs.z)    return z < rhs.z;
         else                    return false;
     }
+
+    Vertex operator*(float c)
+    {
+        return Vertex((c * this->x),(c * this->y),(c * this->z));
+    }
+
+    float dotProduct(const Vertex& rhs)
+    {
+        return ((rhs.x * this->x) + (rhs.y * this->y) + (rhs.z * this->z));
+    }
+
+    float calcMagnitude(const Vertex& rhs)
+    {
+        return sqrtf(dotProduct(rhs));
+    }
+
+    Vertex normalize(Vertex& rhs)
+    {
+        Vertex n;
+        n = rhs * (1.0f / calcMagnitude(rhs));
+        return n;
+    }
+
 };
 
 #endif
