@@ -1,20 +1,229 @@
 void viewTestAngles()
 {
-    SlicingCircle test(1.0f);
-    test.setAngles((2*M_PI)/4);
+    SlicingCircle test(5.0f, 4.0f);
+    test.setAngles();
     for (auto i = (test.angles).begin(); i != (test.angles).end(); ++i) {
-      std::cout << *i << " ";
+      std::cout << *i << '\n';
     }
 }
 
 void viewTestPlanes()
 {
-    SlicingCircle test(5.0f);
-    test.setAngles((2*M_PI)/4);
-    test.setPlanes((2*M_PI)/4);
-    for (auto i = (test.slicingPlanes).begin(); i != (test.slicingPlanes).end(); ++i) {
-      std::cout << (*i) << '\n';
+    SlicingCircle test(1.0f, 0.01f);
+    test.setAngles();
+    test.setPlanes();
+    auto i = (test.slicingPlanes).begin();
+    auto j = (test.leftBoundPlane).begin();
+    auto k = (test.rightBoundPlane).begin();
+    std::cout << "Slice planes:" << '\n';
+    for (int n = 0; n < 25 ; ++n) {
+        std::cout << (j->normal) << '\n';
+        std::cout << (i->normal) << '\n';
+        std::cout << (k->normal) << '\n'<< '\n';
+        ++i;
+        ++j;
+        ++k;
     }
+}
+
+bool SliceOutputTestView()
+{
+    Point a(5.0f,5.0f,5.0f);
+    Point b(6.0f,5.0f,5.0f);
+    Point c(5.0f,6.0f,5.0f);
+    Point d(5.0f,5.0f,6.0f);
+
+    Triangle T1(a,b,c);
+    Triangle T2(a,b,d);
+    Triangle T3(a,c,d);
+    Triangle T4(b,c,d);
+
+    std::vector<Triangle> test;
+
+    test.push_back(T1);
+    test.push_back(T2);
+    test.push_back(T3);
+    test.push_back(T4);
+
+    Layer layerTest(3, 5.0f, 0.1f,0.02f);
+    layerTest.slicing(test);
+
+    for (auto i = (layerTest.catesianSegments).begin(); i != (layerTest.catesianSegments).end(); ++i)
+    {
+        std::cout << *i << '\n';
+    }
+    return true;
+}
+
+void buildPolygonsTestFunction(std::vector<lineSegment>& lines)
+{
+    int maxNumShapes = lines.size();
+    Polygon shapes[maxNumShapes];
+    int k = 0;
+    int counter = 0;
+    while (counter != maxNumShapes)
+    {
+        auto lineIterator = lines.begin();
+        shapes[k].path.push_back(lineIterator->start);
+        shapes[k].path.push_back(lineIterator->end);
+        lines.erase(lineIterator);
+        counter++;
+
+        while (shapes[k].path.back() != shapes[k].path.front())
+        {
+            for (auto i = lines.begin(); i != lines.end(); ++i)
+            {
+                if (shapes[k].path.back() == i->start)
+                {
+                    shapes[k].path.push_back(i->end);
+                    lines.erase(i);
+                    counter++;
+                    break;
+                }
+                if (shapes[k].path.back() == i->end)
+                {
+                    shapes[k].path.push_back(i->start);
+                    lines.erase(i);
+                    counter++;
+                    break;
+                }
+            }
+        }
+        k++;
+    }
+    for (auto n = shapes[0].path.begin(); n != shapes[0].path.end(); ++n) {
+        std::cout << *n << '\n';
+    }
+}
+
+bool buildPolygonsTestView()
+{
+    Point a(1.0f,0.0f,0.0f);
+    Point b(0.0f,1.0f,0.0f);
+    Point c(0.0f,0.0f,1.0f);
+
+    lineSegment l1(a,b);
+    lineSegment l2(c,b);
+    lineSegment l3(a,c);
+
+    std::vector<lineSegment> linesegs;
+
+    linesegs.push_back(l1);
+    linesegs.push_back(l2);
+    linesegs.push_back(l3);
+
+    buildPolygonsTestFunction(linesegs);
+    return true;
+}
+
+void convertPolygonsTestFunction(std::vector<lineSegment>& lines, float radius)
+{
+    int maxNumShapes = lines.size();
+    Polygon shapes[maxNumShapes];
+    Polygon convertedShapes[maxNumShapes];
+    int k = 0;
+    int counter = 0;
+    while (counter != maxNumShapes)
+    {
+        auto lineIterator = lines.begin();
+        shapes[k].path.push_back(lineIterator->start);
+        shapes[k].path.push_back(lineIterator->end);
+        lines.erase(lineIterator);
+        counter++;
+
+        while (shapes[k].path.back() != shapes[k].path.front())
+        {
+            for (auto i = lines.begin(); i != lines.end(); ++i)
+            {
+                if (shapes[k].path.back() == i->start)
+                {
+                    shapes[k].path.push_back(i->end);
+                    lines.erase(i);
+                    counter++;
+                    break;
+                }
+                if (shapes[k].path.back() == i->end)
+                {
+                    shapes[k].path.push_back(i->start);
+                    lines.erase(i);
+                    counter++;
+                    break;
+                }
+            }
+        }
+        convertedShapes[k].convertCartToCyl(shapes[k], radius);
+        k++;
+    }
+    std::cout <<'\n';
+    for (auto n = convertedShapes[0].path.begin(); n != convertedShapes[0].path.end(); ++n) {
+        std::cout << *n << '\n';
+    }
+}
+
+bool convertPolygonsTestView()
+{
+    float oneOverRootTwo = (1/sqrtf(2));
+    Point a(1.0f,0.0f,0.0f);
+    Point b(oneOverRootTwo,oneOverRootTwo,0.0f);
+    Point c(0.0f,1.0f,0.0f);
+    Point d(-oneOverRootTwo,oneOverRootTwo,0.0f);
+    Point e(-1.0f,0.0f,0.0f);
+    Point f(-oneOverRootTwo,-oneOverRootTwo,0.0f);
+    Point g(0.0f,-1.0f,0.0f);
+    Point h(oneOverRootTwo,-oneOverRootTwo,0.0f);
+
+    lineSegment l1(a,b);
+    lineSegment l2(c,b);
+    lineSegment l3(d,c);
+    lineSegment l4(e,d);
+    lineSegment l5(e,f);
+    lineSegment l6(f,g);
+    lineSegment l7(h,g);
+    lineSegment l8(a,h);
+
+    std::vector<lineSegment> linesegs;
+
+    linesegs.push_back(l1);
+    linesegs.push_back(l2);
+    linesegs.push_back(l3);
+    linesegs.push_back(l4);
+    linesegs.push_back(l5);
+    linesegs.push_back(l6);
+    linesegs.push_back(l7);
+    linesegs.push_back(l8);
+
+    convertPolygonsTestFunction(linesegs,1.0f);
+    return true;
+}
+
+bool layerTest()
+{
+    Point a(5.0f,5.0f,5.0f);
+    Point b(6.0f,5.0f,5.0f);
+    Point c(5.0f,6.0f,5.0f);
+    Point d(5.0f,5.0f,6.0f);
+
+    Triangle T1(a,b,c);
+    Triangle T2(a,b,d);
+    Triangle T3(a,c,d);
+    Triangle T4(b,c,d);
+
+    std::vector<Triangle> test;
+
+    test.push_back(T1);
+    test.push_back(T2);
+    test.push_back(T3);
+    test.push_back(T4);
+
+    bool polygonTest;
+
+    Layer layerTest(3, 5.0f, 0.1f,0.02f);
+    layerTest.slicing(test);
+    polygonTest = layerTest.buildPolygons();
+    layerTest.convertPolygonsListToCyl();
+
+
+    return true;
 }
 
 bool testFlipSegment()
