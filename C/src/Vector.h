@@ -31,11 +31,7 @@ struct Vector
         else if (z != rhs.z)    return z < rhs.z;
         else                    return false;
     }
-    Vector operator+(const Vector& a, const Vector& b)
-    {
-        Vector c((a.x + b.x),(a.y + b.y),(a.z + b.z));
-        return c;
-    }
+
 
 };
 
@@ -60,6 +56,11 @@ float calcMagnitude(const Vector& v);
 void normalize(Vector& v);
 Vector normalized(const Vector& v);*/
 
+Vector operator+(const Vector& a, const Vector& b)
+{
+    Vector c((a.x + b.x),(a.y + b.y),(a.z + b.z));
+    return c;
+}
 
 Vector operator-(const Vector& a, const Vector& b)
 {

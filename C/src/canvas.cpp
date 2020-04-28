@@ -117,39 +117,6 @@ void Canvas::initializeGL()
 }
 
 void Canvas::draw_slice(std::vector<lineSegment> v) {
-    glClearColor(0.0, 0.0, 0.0, 0.0);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glEnable(GL_DEPTH_TEST);
-    backdrop->draw();
-    QOpenGLShaderProgram* selected_mesh_shader = NULL;
-    // Set gl draw mode
-    if(drawMode == 1)
-    {
-        selected_mesh_shader = &mesh_wireframe_shader;
-        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-    }
-    else
-    {
-        selected_mesh_shader = &mesh_shader;
-        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-    }
-
-    selected_mesh_shader->bind();
-
-    // Load the transform and view matrices into the shader
-    glUniformMatrix4fv(
-            selected_mesh_shader->uniformLocation("transform_matrix"),
-            1, GL_FALSE, transform_matrix().data());
-    glUniformMatrix4fv(
-            selected_mesh_shader->uniformLocation("view_matrix"),
-            1, GL_FALSE, view_matrix().data());
-
-    // Compensate for z-flattening when zooming
-    glUniform1f(selected_mesh_shader->uniformLocation("zoom"), 1/zoom);
-
-    // Find and enable the attribute location for vertex position
-    const GLuint vp = selected_mesh_shader->attributeLocation("vertex_position");
-    glEnableVertexAttribArray(vp);
 
     for (int i = 0; i < v.size(); i++)
     {
@@ -159,18 +126,6 @@ void Canvas::draw_slice(std::vector<lineSegment> v) {
         glEnd();
     }
 
-    // Reset draw mode for the background and anything else that needs to be drawn
-    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
-    // Clean up state machine
-    glDisableVertexAttribArray(vp);
-    selected_mesh_shader->release();
-
-    if (status.isNull())  return;
-
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.drawText(10, height() - 10, status);
     update();
 }
 
