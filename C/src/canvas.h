@@ -21,6 +21,7 @@ public:
     void view_perspective();
     void draw_shaded();
     void draw_wireframe();
+    void set_sliced(bool s) { sliced = s;}
 
 public slots:
     void set_status(const QString& s);
@@ -52,6 +53,7 @@ private:
 	QOpenGLShaderProgram quad_shader;
 
     GLMesh* mesh;
+    GLMesh* slice;
     GLMesh* bedMesh;
     Backdrop* backdrop;
 
@@ -68,6 +70,8 @@ private:
 
     QPoint mouse_pos;
     QString status;
+
+    bool sliced;
 };
 
 #endif // CANVAS_H

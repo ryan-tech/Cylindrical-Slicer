@@ -16,7 +16,7 @@ Canvas::Canvas(const QSurfaceFormat& format, QWidget *parent)
     QFile styleFile(":/qt/style.qss");
     styleFile.open( QFile::ReadOnly );
     setStyleSheet(styleFile.readAll());
-
+    sliced = false;
     anim.setDuration(100);
 }
 
@@ -73,7 +73,7 @@ void Canvas::load_mesh(Mesh* m, Mesh* b, bool is_reload)
         tilt = 90;
     }
 
-//    update();
+    update();
 
     delete m;
 }
@@ -125,7 +125,7 @@ void Canvas::paintGL()
 
 	backdrop->draw();
 
-    if (mesh)
+    if (mesh && !sliced)
     {
         draw_mesh(mesh);
         draw_mesh(bedMesh);
@@ -136,6 +136,7 @@ void Canvas::paintGL()
 	QPainter painter(this);
 	painter.setRenderHint(QPainter::Antialiasing);
 	painter.drawText(10, height() - 10, status);
+	update();
 }
 
 void Canvas::draw_mesh(GLMesh* m)

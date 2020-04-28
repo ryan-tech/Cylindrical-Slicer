@@ -5,9 +5,22 @@
 #include <QActionGroup>
 #include <QFileSystemWatcher>
 #include <QCollator>
+#include <QMenuBar>
+#include <iostream>
+
+#include "canvas.h"
+#include "ModelPrint.cpp"
+
+QT_BEGIN_NAMESPACE
+class QGroupBox;
+class QLabel;
+class QSpinBox;
+QT_END_NAMESPACE
 
 #include "mesh.h"
 #include "loader.h"
+#include "SlidersGroup.h"
+
 
 class Canvas;
 
@@ -17,13 +30,10 @@ class Window : public QMainWindow
 public:
     explicit Window(QWidget* parent= nullptr);
     bool load_stl(const QString& filename, bool is_reload=false);
-    bool load_prev(void);
-    bool load_next(void);
 
 protected:
     void dragEnterEvent(QDragEnterEvent* event) override;
     void dropEvent(QDropEvent* event) override;
-    void keyPressEvent(QKeyEvent* event) override;
 
 public slots:
     void on_open();
@@ -34,7 +44,7 @@ public slots:
     void on_confusing_stl();
 
     void on_slice();
-    void on_gcodeExport(); 
+    void on_gcodeExport();
 
     void enable_open();
     void disable_open();
@@ -50,15 +60,10 @@ private slots:
     void on_clear_recent();
     void on_load_recent(QAction* a);
     void on_loaded(const QString& filename);
-    void on_save_screenshot();
 	
 private:
     void rebuild_recent_files();
-    void sorted_insert(QStringList& list, const QCollator& collator, const QString& value);
-    void build_folder_file_list();
-    QPair<QString, QString> get_file_neighbors();
 
-    Mesh* object;
 
     /* When creating actions, follow the naming scheme by following the name with an _action.
      *
@@ -73,7 +78,6 @@ private:
     QAction* const wireframe_action;
     QAction* const reload_action;
     QAction* const autoreload_action;
-    QAction* const save_screenshot_action;
     QAction* const export_GCODE_action;
     QAction* const slicer_action;
 
@@ -83,13 +87,19 @@ private:
     const static int MAX_RECENT_FILES=8;
     const static QString RECENT_FILE_KEY;
     QString current_file;
-    QString lookup_folder;
-    QStringList lookup_folder_files;
 
     QFileSystemWatcher* watcher;
 
     Canvas* canvas;
-    Loader* loader; 
+    Loader* loader;
+    ModelPrint print;
+
+    void createControls(const QString &title, int max);
+
+    QLabel *valueLabel;
+    QSpinBox *valueSpinBox;
+    QGroupBox *controlsGroup;
+    void RenderSlice();
 };
 
 #endif // WINDOW_H

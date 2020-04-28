@@ -10,6 +10,7 @@ class Loader : public QThread
     Q_OBJECT
 public:
     explicit Loader(QObject* parent, QString  filename, bool is_reload);
+    ~Loader();
     void run();
     Mesh* get_mesh() { return object; }
 

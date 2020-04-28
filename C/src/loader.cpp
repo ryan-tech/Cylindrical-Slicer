@@ -10,6 +10,13 @@ Loader::Loader(QObject* parent, QString  filename, bool is_reload)
     object = nullptr;
 }
 
+Loader::~Loader() {
+    //std::cout << "destroyed" << std::endl;
+    object = nullptr;
+}
+
+
+
 void Loader::run()
 {
     Mesh* mesh = load_stl();
@@ -28,8 +35,8 @@ void Loader::run()
         else
         {
           emit loaded_file(filename);
-          std::string utf8_text = filename.toUtf8().constData();
-          std::cout<<utf8_text<<std::endl;
+          //std::string utf8_text = filename.toUtf8().constData();
+          //std::cout<<utf8_text<<std::endl;
         }
     }
     filename = temp;
@@ -43,12 +50,14 @@ void Loader::run()
         }
         else {
             object = mesh;
-            if (object)
-            {
-                std::cout << "object is not null" << std::endl;
-            }
             emit got_mesh(mesh, bed_mesh, is_reload);
             emit loaded_file(filename);
+/*
+            delete mesh;
+            mesh = nullptr;
+            delete bed_mesh;
+            bed_mesh = nullptr;
+*/
         }
     }
 }
@@ -266,3 +275,5 @@ Mesh* Loader::read_stl_ascii(QFile& file)
         return nullptr;
     }
 }
+
+

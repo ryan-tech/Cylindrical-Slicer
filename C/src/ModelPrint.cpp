@@ -1,12 +1,9 @@
-#ifndef MODELPRINT_H
-#define MODELPRINT_H
 
-#include "Vector.h"
+
+
 #include "Geometry.h"
 #include "mesh.h"
-#include "math.h"
-#include <string.h>
-#include <vector>
+
 #include <fstream>
 //#include printParameters.h
 
@@ -283,5 +280,3 @@ struct ModelPrint
 };
 
 
-
-#endif
