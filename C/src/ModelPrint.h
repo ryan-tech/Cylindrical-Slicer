@@ -181,30 +181,30 @@ struct ModelPrint
     void convertMeshToTriangles(const Mesh& original)
     {
         Triangle dummyTriangle;
-        vector<float> copyVertices = original.get_vertices();
-        vector<int> copyIndices = original.get_indices();
+        std::vector<GLfloat> copyVertices = original.get_vertices();
+        std::vector<GLuint> copyIndices = original.get_indices();
         auto vertIt = copyVertices.begin();
-        for (auto indexIt = copyIndices.begin(); i != copyIndices.end(); i+=9)
+        for (auto indexIt = copyIndices.begin(); indexIt != copyIndices.end(); indexIt+=9)
         {
-            dummyTriangle.a.x = vertIt;
+            dummyTriangle.a.x = *vertIt;
             vertIt++;
-            dummyTriangle.a.y = vertIt;
+            dummyTriangle.a.y = *vertIt;
             vertIt++;
-            dummyTriangle.a.x = vertIt;
-            vertIt++;
-
-            dummyTriangle.b.x = vertIt;
-            vertIt++;
-            dummyTriangle.b.y = vertIt;
-            vertIt++;
-            dummyTriangle.b.x = vertIt;
+            dummyTriangle.a.x = *vertIt;
             vertIt++;
 
-            dummyTriangle.c.x = vertIt;
+            dummyTriangle.b.x = *vertIt;
             vertIt++;
-            dummyTriangle.c.y = vertIt;
+            dummyTriangle.b.y = *vertIt;
             vertIt++;
-            dummyTriangle.c.x = vertIt;
+            dummyTriangle.b.x = *vertIt;
+            vertIt++;
+
+            dummyTriangle.c.x = *vertIt;
+            vertIt++;
+            dummyTriangle.c.y = *vertIt;
+            vertIt++;
+            dummyTriangle.c.x = *vertIt;
             vertIt++;
             ModelTriangles.push_back(dummyTriangle);
         }

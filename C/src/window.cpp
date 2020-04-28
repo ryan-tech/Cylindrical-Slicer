@@ -2,11 +2,8 @@
 
 #include "window.h"
 #include "canvas.h"
+#include "ModelPrint.h"
 
-
-// For debugging
-#include <iostream>
-using namespace std;
 
 
 const QString Window::RECENT_FILE_KEY = "recentFiles";
@@ -78,6 +75,10 @@ Window::Window(QWidget *parent) :
     QObject::connect(slicer_action, &QAction::triggered,
                      this, &Window::on_slice);
 
+    // Connects the export function to the export action
+    QObject::connect(export_GCODE_action, &QAction::triggered,
+                     this, &Window::on_gcodeExport);
+
     QObject::connect(recent_files_clear_action, &QAction::triggered,
                      this, &Window::on_clear_recent);
     QObject::connect(recent_files_group, &QActionGroup::triggered,
@@ -133,9 +134,6 @@ Window::Window(QWidget *parent) :
     auto export_menu = menuBar()->addMenu("Export");
     export_menu->addAction(export_GCODE_action);
 
-
-
-
     auto help_menu = menuBar()->addMenu("Help");
     help_menu->addAction(about_action);
 
@@ -155,9 +153,20 @@ void Window::on_open()
 void Window::on_slice()
 {
     if(loader->get_mesh() != nullptr)
-        cout << "object is populated!" << endl;
-    else
-        cout << "???" << endl;
+    {
+	ModelPrint print;
+	print.convertMeshToTriangles(*(loader->get_mesh())); 
+	print.buildPrint(); 
+    }
+
+    QMessageBox::about(this, "", "Thumbs Up");
+
+}
+
+void Window::on_gcodeExport()
+{
+	ModelPrint print;
+   	print.exportGcode(); 
 
     QMessageBox::about(this, "", "Thumbs Up");
 
@@ -405,7 +414,6 @@ bool Window::load_stl(const QString& filename, bool is_reload)
         autoreload_action->setEnabled(true);
         reload_action->setEnabled(true);
     }
-    cout << "Loader starting" << endl;
     loader->start();
 
     return true;

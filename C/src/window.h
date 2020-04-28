@@ -34,6 +34,7 @@ public slots:
     void on_confusing_stl();
 
     void on_slice();
+    void on_gcodeExport(); 
 
     void enable_open();
     void disable_open();
@@ -88,7 +89,7 @@ private:
     QFileSystemWatcher* watcher;
 
     Canvas* canvas;
-    Loader* loader;
+    Loader* loader; 
 };
 
 #endif // WINDOW_H
