@@ -184,13 +184,27 @@ struct ModelPrint
         vector<float> copyVertices = original.get_vertices();
         vector<int> copyIndices = original.get_indices();
         auto vertIt = copyVertices.begin();
-        for (auto indexIt = copyIndices.begin(); i != copyIndices.end(); i+=3)
+        for (auto indexIt = copyIndices.begin(); i != copyIndices.end(); i+=9)
         {
-            dummyTriangle.a = vertIt;
+            dummyTriangle.a.x = vertIt;
             vertIt++;
-            dummyTriangle.b = vertIt;
+            dummyTriangle.a.y = vertIt;
             vertIt++;
-            dummyTriangle.c = vertIt;
+            dummyTriangle.a.x = vertIt;
+            vertIt++;
+
+            dummyTriangle.b.x = vertIt;
+            vertIt++;
+            dummyTriangle.b.y = vertIt;
+            vertIt++;
+            dummyTriangle.b.x = vertIt;
+            vertIt++;
+
+            dummyTriangle.c.x = vertIt;
+            vertIt++;
+            dummyTriangle.c.y = vertIt;
+            vertIt++;
+            dummyTriangle.c.x = vertIt;
             vertIt++;
             ModelTriangles.push_back(dummyTriangle);
         }
