@@ -33,7 +33,7 @@ src/canvas.h
 src/glmesh.h
 src/loader.h
 src/mesh.h
-src/window.h src/ModelPrint.cpp)
+src/window.h src/ModelPrint.cpp src/Geometry.h src/Vector.h src/Vector.cpp)
 
 #set project resources and icon resource
 set(Project_Resources qt/qt.qrc gl/gl.qrc)

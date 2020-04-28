@@ -9,7 +9,7 @@
 #include <iostream>
 
 #include "canvas.h"
-#include "ModelPrint.cpp"
+
 
 QT_BEGIN_NAMESPACE
 class QGroupBox;

@@ -1,7 +1,6 @@
 #include <QMenuBar>
 
 #include "window.h"
-#include "canvas.h"
 
 const QString Window::RECENT_FILE_KEY = "recentFiles";
 

@@ -219,7 +219,14 @@ bool operator==(lineSegment a, lineSegment b)
     {
         return true;
     }
-    return (a.start == b.end) && (a.end == b.start);
+    if ((a.start == b.end) && (a.end == b.start))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 bool operator!=(lineSegment a, lineSegment b)
