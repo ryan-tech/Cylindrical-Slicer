@@ -11,6 +11,7 @@ class Loader : public QThread
 public:
     explicit Loader(QObject* parent, QString  filename, bool is_reload);
     void run();
+    Mesh* get_mesh() { return object; }
 
 protected:
     Mesh* load_stl();
@@ -34,6 +35,7 @@ private:
 
     /*  Used to warn on binary STLs that begin with the word 'solid'" */
     bool confusing_stl;
+    Mesh* object;
 
 };
 

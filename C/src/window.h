@@ -6,6 +6,9 @@
 #include <QFileSystemWatcher>
 #include <QCollator>
 
+#include "mesh.h"
+#include "loader.h"
+
 class Canvas;
 
 class Window : public QMainWindow
@@ -30,6 +33,8 @@ public slots:
     void on_missing_file();
     void on_confusing_stl();
 
+    void on_slice();
+
     void enable_open();
     void disable_open();
 
@@ -52,6 +57,7 @@ private:
     void build_folder_file_list();
     QPair<QString, QString> get_file_neighbors();
 
+    Mesh* object;
 
     /* When creating actions, follow the naming scheme by following the name with an _action.
      *
@@ -82,6 +88,7 @@ private:
     QFileSystemWatcher* watcher;
 
     Canvas* canvas;
+    Loader* loader;
 };
 
 #endif // WINDOW_H

@@ -2,7 +2,12 @@
 
 #include "window.h"
 #include "canvas.h"
-#include "loader.h"
+
+
+// For debugging
+#include <iostream>
+using namespace std;
+
 
 const QString Window::RECENT_FILE_KEY = "recentFiles";
 
@@ -29,6 +34,7 @@ Window::Window(QWidget *parent) :
     watcher(new QFileSystemWatcher(this))
 
 {
+    object = nullptr;
     setWindowTitle("Cylindrical Slicer");
     setAcceptDrops(true);
 
@@ -67,6 +73,10 @@ Window::Window(QWidget *parent) :
 
     QObject::connect(about_action, &QAction::triggered,
                      this, &Window::on_about);
+
+    // Connects the slicer function to the slicer action
+    QObject::connect(slicer_action, &QAction::triggered,
+                     this, &Window::on_slice);
 
     QObject::connect(recent_files_clear_action, &QAction::triggered,
                      this, &Window::on_clear_recent);
@@ -117,11 +127,13 @@ Window::Window(QWidget *parent) :
     QObject::connect(drawModes, &QActionGroup::triggered,
                      this, &Window::on_drawMode);
 
+    auto slicer_menu = menuBar()->addMenu("Slice");
+    slicer_menu->addAction(slicer_action);
+
     auto export_menu = menuBar()->addMenu("Export");
     export_menu->addAction(export_GCODE_action);
 
-    auto slicer_menu = menuBar()->addMenu("Slice");
-    slicer_menu->addAction(slicer_action);
+
 
 
     auto help_menu = menuBar()->addMenu("Help");
@@ -138,6 +150,17 @@ void Window::on_open()
     {
         load_stl(filename);
     }
+}
+
+void Window::on_slice()
+{
+    if(loader->get_mesh() != nullptr)
+        cout << "object is populated!" << endl;
+    else
+        cout << "???" << endl;
+
+    QMessageBox::about(this, "", "Thumbs Up");
+
 }
 
 void Window::on_about()
@@ -349,7 +372,7 @@ bool Window::load_stl(const QString& filename, bool is_reload)
 
     canvas->set_status("Loading " + filename);
 
-    auto loader = new Loader(this, filename, is_reload);
+    loader = new Loader(this, filename, is_reload);
     connect(loader, &Loader::started,
               this, &Window::disable_open);
 
@@ -382,8 +405,9 @@ bool Window::load_stl(const QString& filename, bool is_reload)
         autoreload_action->setEnabled(true);
         reload_action->setEnabled(true);
     }
-
+    cout << "Loader starting" << endl;
     loader->start();
+
     return true;
 }
 

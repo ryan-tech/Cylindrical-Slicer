@@ -7,7 +7,7 @@
 Loader::Loader(QObject* parent, QString  filename, bool is_reload)
         : QThread(parent), filename(std::move(filename)), is_reload(is_reload)
 {
-
+    object = nullptr;
 }
 
 void Loader::run()
@@ -41,8 +41,12 @@ void Loader::run()
             emit error_empty_mesh();
             delete mesh;
         }
-        else
-        {
+        else {
+            object = mesh;
+            if (object)
+            {
+                std::cout << "object is not null" << std::endl;
+            }
             emit got_mesh(mesh, bed_mesh, is_reload);
             emit loaded_file(filename);
         }
