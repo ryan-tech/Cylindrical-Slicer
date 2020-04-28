@@ -33,6 +33,8 @@ public slots:
     void on_missing_file();
     void on_confusing_stl();
 
+    void on_printer_parameters();
+
     void on_slice();
     void on_gcodeExport(); 
 
@@ -76,6 +78,7 @@ private:
     QAction* const save_screenshot_action;
     QAction* const export_GCODE_action;
     QAction* const slicer_action;
+    QAction* const printer_parameters_action;
 
     QMenu* const recent_files;
     QActionGroup* const recent_files_group;

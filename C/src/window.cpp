@@ -28,6 +28,9 @@ Window::Window(QWidget *parent) :
     recent_files(new QMenu("Open recent", this)),
     recent_files_group(new QActionGroup(this)),
     recent_files_clear_action(new QAction("Clear recent files", this)),
+
+    printer_parameters_action(new QAction("View Printer Parameters", this)),
+
     watcher(new QFileSystemWatcher(this))
 
 {
@@ -84,6 +87,9 @@ Window::Window(QWidget *parent) :
     QObject::connect(recent_files_group, &QActionGroup::triggered,
                      this, &Window::on_load_recent);
 
+    QObject::connect(printer_parameters_action, &QAction::triggered,
+                      this, &Window::on_printer_parameters);
+
     save_screenshot_action->setCheckable(false);
     QObject::connect(save_screenshot_action, &QAction::triggered,
         this, &Window::on_save_screenshot);
@@ -131,6 +137,9 @@ Window::Window(QWidget *parent) :
     auto slicer_menu = menuBar()->addMenu("Slice");
     slicer_menu->addAction(slicer_action);
 
+    auto printer_menu = menuBar()->addMenu("Printer Parameters");
+    printer_menu->addAction(printer_parameters_action);
+
     auto export_menu = menuBar()->addMenu("Export");
     export_menu->addAction(export_GCODE_action);
 
@@ -170,6 +179,64 @@ void Window::on_gcodeExport()
 
     QMessageBox::about(this, "", "Thumbs Up");
 
+}
+
+void Window::on_printer_parameters()
+{     
+    QMessageBox msgBox;
+    bool ok;
+
+    QString bed_length = QInputDialog::getText(this, "",
+                                         "Print Bed Length (mm): ", QLineEdit::Normal,
+                                         "", &ok);
+    QString bed_radius = QInputDialog::getText(this, "",
+                                         "Print Bed Radius (mm): ", QLineEdit::Normal,
+                                         "", &ok);
+    QString filament_diameter = QInputDialog::getText(this, "",
+                                         "Filament Diameter (mm): ", QLineEdit::Normal,
+                                         "", &ok); 
+    QString extruder_temp = QInputDialog::getText(this, "",
+                                         "Extruder Tempature (C): ", QLineEdit::Normal,
+                                         "", &ok);      
+    QString bed_temp = QInputDialog::getText(this, "",
+                                         "Bed Tempature (C): ", QLineEdit::Normal,
+                                         "", &ok);           
+    QString z_offset = QInputDialog::getText(this, "",
+                                         "Z Offset (mm): ", QLineEdit::Normal,
+                                         "", &ok);
+    QString layer_height = QInputDialog::getText(this, "",
+                                         "Layer Height (mm): ", QLineEdit::Normal,
+                                         "", &ok);
+    QString first_layer_height = QInputDialog::getText(this, "",
+                                         "First Layer Height (mm): ", QLineEdit::Normal,
+                                         "", &ok);
+    QString travel_speed = QInputDialog::getText(this, "",
+                                         "Travel (mm/s): ", QLineEdit::Normal,
+                                         "", &ok);      
+    QString first_layer_speed = QInputDialog::getText(this, "",
+                                         "First Layer Speed (mm/s): ", QLineEdit::Normal,
+                                         "", &ok);  
+    QString print_speed = QInputDialog::getText(this, "",
+                                         "Print Speed (mm/s): ", QLineEdit::Normal,
+                                         "", &ok);                                                   
+
+    msgBox.setText("<b>Cylindrical Slicer Printer Parameters</b>");
+    msgBox.setInformativeText("Print Bed Length (X-Axis): " + bed_length + " mm\n" +
+                           "Bed Radius (Y-Axis): " + bed_radius + " mm\n" +
+                           "Bed Layer Thickness (Z-Axis): " + filament_diameter + " mm\n" +
+                           "Extruder Temperature: " + extruder_temp + " °C\n" +
+                           "Bed Temperature: " + bed_temp + " °C\n" +
+                           "Z Offset: " + z_offset + " mm\n" +
+                           "Layer Height: " + layer_height + " mm\n" +
+                           "First Layer Height: " + first_layer_height + " mm\n" +
+                           "Travel Speed: " + travel_speed + " mm/s\n" +
+                           "First Layer Speed: " + first_layer_speed + " mm/s\n" +
+                           "Print Speed: " + print_speed + " mm/s\n\n");
+
+    msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+    msgBox.setDefaultButton(QMessageBox::Save);
+    
+    int ret = msgBox.exec();
 }
 
 void Window::on_about()
