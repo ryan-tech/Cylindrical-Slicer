@@ -4,10 +4,13 @@
 #include <QtOpenGL>
 #include <QSurfaceFormat>
 #include <QOpenGLShaderProgram>
+#include "ModelPrint.cpp"
+#include "Vector.h"
 
 class GLMesh;
 class Mesh;
 class Backdrop;
+
 
 class Canvas : public QOpenGLWidget, protected QOpenGLFunctions
 {
@@ -22,6 +25,7 @@ public:
     void draw_shaded();
     void draw_wireframe();
     void set_sliced(bool s) { sliced = s;}
+    void draw_slice(std::vector<lineSegment> v);
 
 public slots:
     void set_status(const QString& s);

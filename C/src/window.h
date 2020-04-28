@@ -19,8 +19,6 @@ QT_END_NAMESPACE
 
 #include "mesh.h"
 #include "loader.h"
-#include "SlidersGroup.h"
-
 
 class Canvas;
 
