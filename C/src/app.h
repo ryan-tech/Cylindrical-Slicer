@@ -2,6 +2,8 @@
 #define APP_H
 
 #include <QApplication>
+//#include "canvas.h"
+#include "window.h"
 
 class Window;
 

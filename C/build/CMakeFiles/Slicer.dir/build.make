@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ryan/cs426/Cylindrical-Slicer/C
+CMAKE_SOURCE_DIR = /home/damian/Cylindrical-Slicer/C
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ryan/cs426/Cylindrical-Slicer/C/build
+CMAKE_BINARY_DIR = /home/damian/Cylindrical-Slicer/C/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Slicer.dir/depend.make
@@ -59,8 +59,8 @@ include CMakeFiles/Slicer.dir/flags.make
 
 qrc_qt.cpp: ../qt/style.qss
 qrc_qt.cpp: ../qt/qt.qrc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating qrc_qt.cpp"
-	/usr/lib/qt5/bin/rcc --name qt --output /home/ryan/cs426/Cylindrical-Slicer/C/build/qrc_qt.cpp /home/ryan/cs426/Cylindrical-Slicer/C/qt/qt.qrc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating qrc_qt.cpp"
+	/usr/lib/qt5/bin/rcc --name qt --output /home/damian/Cylindrical-Slicer/C/build/qrc_qt.cpp /home/damian/Cylindrical-Slicer/C/qt/qt.qrc
 
 qrc_gl.cpp: ../gl/mesh.frag
 qrc_gl.cpp: ../gl/mesh.vert
@@ -70,21 +70,21 @@ qrc_gl.cpp: ../gl/quad.vert
 qrc_gl.cpp: ../gl/sphere.stl
 qrc_gl.cpp: ../gl/bed.stl
 qrc_gl.cpp: ../gl/gl.qrc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating qrc_gl.cpp"
-	/usr/lib/qt5/bin/rcc --name gl --output /home/ryan/cs426/Cylindrical-Slicer/C/build/qrc_gl.cpp /home/ryan/cs426/Cylindrical-Slicer/C/gl/gl.qrc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating qrc_gl.cpp"
+	/usr/lib/qt5/bin/rcc --name gl --output /home/damian/Cylindrical-Slicer/C/build/qrc_gl.cpp /home/damian/Cylindrical-Slicer/C/gl/gl.qrc
 
 CMakeFiles/Slicer.dir/src/app.cpp.o: CMakeFiles/Slicer.dir/flags.make
 CMakeFiles/Slicer.dir/src/app.cpp.o: ../src/app.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Slicer.dir/src/app.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/app.cpp.o -c /home/ryan/cs426/Cylindrical-Slicer/C/src/app.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Slicer.dir/src/app.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/app.cpp.o -c /home/damian/Cylindrical-Slicer/C/src/app.cpp
 
 CMakeFiles/Slicer.dir/src/app.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Slicer.dir/src/app.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ryan/cs426/Cylindrical-Slicer/C/src/app.cpp > CMakeFiles/Slicer.dir/src/app.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damian/Cylindrical-Slicer/C/src/app.cpp > CMakeFiles/Slicer.dir/src/app.cpp.i
 
 CMakeFiles/Slicer.dir/src/app.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Slicer.dir/src/app.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ryan/cs426/Cylindrical-Slicer/C/src/app.cpp -o CMakeFiles/Slicer.dir/src/app.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damian/Cylindrical-Slicer/C/src/app.cpp -o CMakeFiles/Slicer.dir/src/app.cpp.s
 
 CMakeFiles/Slicer.dir/src/app.cpp.o.requires:
 
@@ -99,16 +99,16 @@ CMakeFiles/Slicer.dir/src/app.cpp.o.provides.build: CMakeFiles/Slicer.dir/src/ap
 
 CMakeFiles/Slicer.dir/src/backdrop.cpp.o: CMakeFiles/Slicer.dir/flags.make
 CMakeFiles/Slicer.dir/src/backdrop.cpp.o: ../src/backdrop.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Slicer.dir/src/backdrop.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/backdrop.cpp.o -c /home/ryan/cs426/Cylindrical-Slicer/C/src/backdrop.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Slicer.dir/src/backdrop.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/backdrop.cpp.o -c /home/damian/Cylindrical-Slicer/C/src/backdrop.cpp
 
 CMakeFiles/Slicer.dir/src/backdrop.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Slicer.dir/src/backdrop.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ryan/cs426/Cylindrical-Slicer/C/src/backdrop.cpp > CMakeFiles/Slicer.dir/src/backdrop.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damian/Cylindrical-Slicer/C/src/backdrop.cpp > CMakeFiles/Slicer.dir/src/backdrop.cpp.i
 
 CMakeFiles/Slicer.dir/src/backdrop.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Slicer.dir/src/backdrop.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ryan/cs426/Cylindrical-Slicer/C/src/backdrop.cpp -o CMakeFiles/Slicer.dir/src/backdrop.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damian/Cylindrical-Slicer/C/src/backdrop.cpp -o CMakeFiles/Slicer.dir/src/backdrop.cpp.s
 
 CMakeFiles/Slicer.dir/src/backdrop.cpp.o.requires:
 
@@ -123,16 +123,16 @@ CMakeFiles/Slicer.dir/src/backdrop.cpp.o.provides.build: CMakeFiles/Slicer.dir/s
 
 CMakeFiles/Slicer.dir/src/canvas.cpp.o: CMakeFiles/Slicer.dir/flags.make
 CMakeFiles/Slicer.dir/src/canvas.cpp.o: ../src/canvas.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Slicer.dir/src/canvas.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/canvas.cpp.o -c /home/ryan/cs426/Cylindrical-Slicer/C/src/canvas.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Slicer.dir/src/canvas.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/canvas.cpp.o -c /home/damian/Cylindrical-Slicer/C/src/canvas.cpp
 
 CMakeFiles/Slicer.dir/src/canvas.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Slicer.dir/src/canvas.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ryan/cs426/Cylindrical-Slicer/C/src/canvas.cpp > CMakeFiles/Slicer.dir/src/canvas.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damian/Cylindrical-Slicer/C/src/canvas.cpp > CMakeFiles/Slicer.dir/src/canvas.cpp.i
 
 CMakeFiles/Slicer.dir/src/canvas.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Slicer.dir/src/canvas.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ryan/cs426/Cylindrical-Slicer/C/src/canvas.cpp -o CMakeFiles/Slicer.dir/src/canvas.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damian/Cylindrical-Slicer/C/src/canvas.cpp -o CMakeFiles/Slicer.dir/src/canvas.cpp.s
 
 CMakeFiles/Slicer.dir/src/canvas.cpp.o.requires:
 
@@ -147,16 +147,16 @@ CMakeFiles/Slicer.dir/src/canvas.cpp.o.provides.build: CMakeFiles/Slicer.dir/src
 
 CMakeFiles/Slicer.dir/src/glmesh.cpp.o: CMakeFiles/Slicer.dir/flags.make
 CMakeFiles/Slicer.dir/src/glmesh.cpp.o: ../src/glmesh.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Slicer.dir/src/glmesh.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/glmesh.cpp.o -c /home/ryan/cs426/Cylindrical-Slicer/C/src/glmesh.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Slicer.dir/src/glmesh.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/glmesh.cpp.o -c /home/damian/Cylindrical-Slicer/C/src/glmesh.cpp
 
 CMakeFiles/Slicer.dir/src/glmesh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Slicer.dir/src/glmesh.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ryan/cs426/Cylindrical-Slicer/C/src/glmesh.cpp > CMakeFiles/Slicer.dir/src/glmesh.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damian/Cylindrical-Slicer/C/src/glmesh.cpp > CMakeFiles/Slicer.dir/src/glmesh.cpp.i
 
 CMakeFiles/Slicer.dir/src/glmesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Slicer.dir/src/glmesh.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ryan/cs426/Cylindrical-Slicer/C/src/glmesh.cpp -o CMakeFiles/Slicer.dir/src/glmesh.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damian/Cylindrical-Slicer/C/src/glmesh.cpp -o CMakeFiles/Slicer.dir/src/glmesh.cpp.s
 
 CMakeFiles/Slicer.dir/src/glmesh.cpp.o.requires:
 
@@ -171,16 +171,16 @@ CMakeFiles/Slicer.dir/src/glmesh.cpp.o.provides.build: CMakeFiles/Slicer.dir/src
 
 CMakeFiles/Slicer.dir/src/loader.cpp.o: CMakeFiles/Slicer.dir/flags.make
 CMakeFiles/Slicer.dir/src/loader.cpp.o: ../src/loader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Slicer.dir/src/loader.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/loader.cpp.o -c /home/ryan/cs426/Cylindrical-Slicer/C/src/loader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Slicer.dir/src/loader.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/loader.cpp.o -c /home/damian/Cylindrical-Slicer/C/src/loader.cpp
 
 CMakeFiles/Slicer.dir/src/loader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Slicer.dir/src/loader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ryan/cs426/Cylindrical-Slicer/C/src/loader.cpp > CMakeFiles/Slicer.dir/src/loader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damian/Cylindrical-Slicer/C/src/loader.cpp > CMakeFiles/Slicer.dir/src/loader.cpp.i
 
 CMakeFiles/Slicer.dir/src/loader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Slicer.dir/src/loader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ryan/cs426/Cylindrical-Slicer/C/src/loader.cpp -o CMakeFiles/Slicer.dir/src/loader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damian/Cylindrical-Slicer/C/src/loader.cpp -o CMakeFiles/Slicer.dir/src/loader.cpp.s
 
 CMakeFiles/Slicer.dir/src/loader.cpp.o.requires:
 
@@ -195,16 +195,16 @@ CMakeFiles/Slicer.dir/src/loader.cpp.o.provides.build: CMakeFiles/Slicer.dir/src
 
 CMakeFiles/Slicer.dir/src/main.cpp.o: CMakeFiles/Slicer.dir/flags.make
 CMakeFiles/Slicer.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Slicer.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/main.cpp.o -c /home/ryan/cs426/Cylindrical-Slicer/C/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Slicer.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/main.cpp.o -c /home/damian/Cylindrical-Slicer/C/src/main.cpp
 
 CMakeFiles/Slicer.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Slicer.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ryan/cs426/Cylindrical-Slicer/C/src/main.cpp > CMakeFiles/Slicer.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damian/Cylindrical-Slicer/C/src/main.cpp > CMakeFiles/Slicer.dir/src/main.cpp.i
 
 CMakeFiles/Slicer.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Slicer.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ryan/cs426/Cylindrical-Slicer/C/src/main.cpp -o CMakeFiles/Slicer.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damian/Cylindrical-Slicer/C/src/main.cpp -o CMakeFiles/Slicer.dir/src/main.cpp.s
 
 CMakeFiles/Slicer.dir/src/main.cpp.o.requires:
 
@@ -219,16 +219,16 @@ CMakeFiles/Slicer.dir/src/main.cpp.o.provides.build: CMakeFiles/Slicer.dir/src/m
 
 CMakeFiles/Slicer.dir/src/mesh.cpp.o: CMakeFiles/Slicer.dir/flags.make
 CMakeFiles/Slicer.dir/src/mesh.cpp.o: ../src/mesh.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Slicer.dir/src/mesh.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/mesh.cpp.o -c /home/ryan/cs426/Cylindrical-Slicer/C/src/mesh.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Slicer.dir/src/mesh.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/mesh.cpp.o -c /home/damian/Cylindrical-Slicer/C/src/mesh.cpp
 
 CMakeFiles/Slicer.dir/src/mesh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Slicer.dir/src/mesh.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ryan/cs426/Cylindrical-Slicer/C/src/mesh.cpp > CMakeFiles/Slicer.dir/src/mesh.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damian/Cylindrical-Slicer/C/src/mesh.cpp > CMakeFiles/Slicer.dir/src/mesh.cpp.i
 
 CMakeFiles/Slicer.dir/src/mesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Slicer.dir/src/mesh.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ryan/cs426/Cylindrical-Slicer/C/src/mesh.cpp -o CMakeFiles/Slicer.dir/src/mesh.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damian/Cylindrical-Slicer/C/src/mesh.cpp -o CMakeFiles/Slicer.dir/src/mesh.cpp.s
 
 CMakeFiles/Slicer.dir/src/mesh.cpp.o.requires:
 
@@ -243,16 +243,16 @@ CMakeFiles/Slicer.dir/src/mesh.cpp.o.provides.build: CMakeFiles/Slicer.dir/src/m
 
 CMakeFiles/Slicer.dir/src/window.cpp.o: CMakeFiles/Slicer.dir/flags.make
 CMakeFiles/Slicer.dir/src/window.cpp.o: ../src/window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Slicer.dir/src/window.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/window.cpp.o -c /home/ryan/cs426/Cylindrical-Slicer/C/src/window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Slicer.dir/src/window.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/window.cpp.o -c /home/damian/Cylindrical-Slicer/C/src/window.cpp
 
 CMakeFiles/Slicer.dir/src/window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Slicer.dir/src/window.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ryan/cs426/Cylindrical-Slicer/C/src/window.cpp > CMakeFiles/Slicer.dir/src/window.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damian/Cylindrical-Slicer/C/src/window.cpp > CMakeFiles/Slicer.dir/src/window.cpp.i
 
 CMakeFiles/Slicer.dir/src/window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Slicer.dir/src/window.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ryan/cs426/Cylindrical-Slicer/C/src/window.cpp -o CMakeFiles/Slicer.dir/src/window.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damian/Cylindrical-Slicer/C/src/window.cpp -o CMakeFiles/Slicer.dir/src/window.cpp.s
 
 CMakeFiles/Slicer.dir/src/window.cpp.o.requires:
 
@@ -265,18 +265,90 @@ CMakeFiles/Slicer.dir/src/window.cpp.o.provides: CMakeFiles/Slicer.dir/src/windo
 CMakeFiles/Slicer.dir/src/window.cpp.o.provides.build: CMakeFiles/Slicer.dir/src/window.cpp.o
 
 
+CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o: CMakeFiles/Slicer.dir/flags.make
+CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o: ../src/ModelPrint.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o -c /home/damian/Cylindrical-Slicer/C/src/ModelPrint.cpp
+
+CMakeFiles/Slicer.dir/src/ModelPrint.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Slicer.dir/src/ModelPrint.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damian/Cylindrical-Slicer/C/src/ModelPrint.cpp > CMakeFiles/Slicer.dir/src/ModelPrint.cpp.i
+
+CMakeFiles/Slicer.dir/src/ModelPrint.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Slicer.dir/src/ModelPrint.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damian/Cylindrical-Slicer/C/src/ModelPrint.cpp -o CMakeFiles/Slicer.dir/src/ModelPrint.cpp.s
+
+CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o.requires:
+
+.PHONY : CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o.requires
+
+CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o.provides: CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o.provides.build
+.PHONY : CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o.provides
+
+CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o.provides.build: CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o
+
+
+CMakeFiles/Slicer.dir/src/Geometry.cpp.o: CMakeFiles/Slicer.dir/flags.make
+CMakeFiles/Slicer.dir/src/Geometry.cpp.o: ../src/Geometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Slicer.dir/src/Geometry.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/Geometry.cpp.o -c /home/damian/Cylindrical-Slicer/C/src/Geometry.cpp
+
+CMakeFiles/Slicer.dir/src/Geometry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Slicer.dir/src/Geometry.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damian/Cylindrical-Slicer/C/src/Geometry.cpp > CMakeFiles/Slicer.dir/src/Geometry.cpp.i
+
+CMakeFiles/Slicer.dir/src/Geometry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Slicer.dir/src/Geometry.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damian/Cylindrical-Slicer/C/src/Geometry.cpp -o CMakeFiles/Slicer.dir/src/Geometry.cpp.s
+
+CMakeFiles/Slicer.dir/src/Geometry.cpp.o.requires:
+
+.PHONY : CMakeFiles/Slicer.dir/src/Geometry.cpp.o.requires
+
+CMakeFiles/Slicer.dir/src/Geometry.cpp.o.provides: CMakeFiles/Slicer.dir/src/Geometry.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/Geometry.cpp.o.provides.build
+.PHONY : CMakeFiles/Slicer.dir/src/Geometry.cpp.o.provides
+
+CMakeFiles/Slicer.dir/src/Geometry.cpp.o.provides.build: CMakeFiles/Slicer.dir/src/Geometry.cpp.o
+
+
+CMakeFiles/Slicer.dir/src/Vector.cpp.o: CMakeFiles/Slicer.dir/flags.make
+CMakeFiles/Slicer.dir/src/Vector.cpp.o: ../src/Vector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Slicer.dir/src/Vector.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/src/Vector.cpp.o -c /home/damian/Cylindrical-Slicer/C/src/Vector.cpp
+
+CMakeFiles/Slicer.dir/src/Vector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Slicer.dir/src/Vector.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damian/Cylindrical-Slicer/C/src/Vector.cpp > CMakeFiles/Slicer.dir/src/Vector.cpp.i
+
+CMakeFiles/Slicer.dir/src/Vector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Slicer.dir/src/Vector.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damian/Cylindrical-Slicer/C/src/Vector.cpp -o CMakeFiles/Slicer.dir/src/Vector.cpp.s
+
+CMakeFiles/Slicer.dir/src/Vector.cpp.o.requires:
+
+.PHONY : CMakeFiles/Slicer.dir/src/Vector.cpp.o.requires
+
+CMakeFiles/Slicer.dir/src/Vector.cpp.o.provides: CMakeFiles/Slicer.dir/src/Vector.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/Vector.cpp.o.provides.build
+.PHONY : CMakeFiles/Slicer.dir/src/Vector.cpp.o.provides
+
+CMakeFiles/Slicer.dir/src/Vector.cpp.o.provides.build: CMakeFiles/Slicer.dir/src/Vector.cpp.o
+
+
 CMakeFiles/Slicer.dir/qrc_qt.cpp.o: CMakeFiles/Slicer.dir/flags.make
 CMakeFiles/Slicer.dir/qrc_qt.cpp.o: qrc_qt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Slicer.dir/qrc_qt.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/qrc_qt.cpp.o -c /home/ryan/cs426/Cylindrical-Slicer/C/build/qrc_qt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Slicer.dir/qrc_qt.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/qrc_qt.cpp.o -c /home/damian/Cylindrical-Slicer/C/build/qrc_qt.cpp
 
 CMakeFiles/Slicer.dir/qrc_qt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Slicer.dir/qrc_qt.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ryan/cs426/Cylindrical-Slicer/C/build/qrc_qt.cpp > CMakeFiles/Slicer.dir/qrc_qt.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damian/Cylindrical-Slicer/C/build/qrc_qt.cpp > CMakeFiles/Slicer.dir/qrc_qt.cpp.i
 
 CMakeFiles/Slicer.dir/qrc_qt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Slicer.dir/qrc_qt.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ryan/cs426/Cylindrical-Slicer/C/build/qrc_qt.cpp -o CMakeFiles/Slicer.dir/qrc_qt.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damian/Cylindrical-Slicer/C/build/qrc_qt.cpp -o CMakeFiles/Slicer.dir/qrc_qt.cpp.s
 
 CMakeFiles/Slicer.dir/qrc_qt.cpp.o.requires:
 
@@ -291,16 +363,16 @@ CMakeFiles/Slicer.dir/qrc_qt.cpp.o.provides.build: CMakeFiles/Slicer.dir/qrc_qt.
 
 CMakeFiles/Slicer.dir/qrc_gl.cpp.o: CMakeFiles/Slicer.dir/flags.make
 CMakeFiles/Slicer.dir/qrc_gl.cpp.o: qrc_gl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Slicer.dir/qrc_gl.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/qrc_gl.cpp.o -c /home/ryan/cs426/Cylindrical-Slicer/C/build/qrc_gl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Slicer.dir/qrc_gl.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/qrc_gl.cpp.o -c /home/damian/Cylindrical-Slicer/C/build/qrc_gl.cpp
 
 CMakeFiles/Slicer.dir/qrc_gl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Slicer.dir/qrc_gl.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ryan/cs426/Cylindrical-Slicer/C/build/qrc_gl.cpp > CMakeFiles/Slicer.dir/qrc_gl.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damian/Cylindrical-Slicer/C/build/qrc_gl.cpp > CMakeFiles/Slicer.dir/qrc_gl.cpp.i
 
 CMakeFiles/Slicer.dir/qrc_gl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Slicer.dir/qrc_gl.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ryan/cs426/Cylindrical-Slicer/C/build/qrc_gl.cpp -o CMakeFiles/Slicer.dir/qrc_gl.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damian/Cylindrical-Slicer/C/build/qrc_gl.cpp -o CMakeFiles/Slicer.dir/qrc_gl.cpp.s
 
 CMakeFiles/Slicer.dir/qrc_gl.cpp.o.requires:
 
@@ -315,16 +387,16 @@ CMakeFiles/Slicer.dir/qrc_gl.cpp.o.provides.build: CMakeFiles/Slicer.dir/qrc_gl.
 
 CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.o: CMakeFiles/Slicer.dir/flags.make
 CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.o: Slicer_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.o -c /home/ryan/cs426/Cylindrical-Slicer/C/build/Slicer_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.o -c /home/damian/Cylindrical-Slicer/C/build/Slicer_autogen/mocs_compilation.cpp
 
 CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ryan/cs426/Cylindrical-Slicer/C/build/Slicer_autogen/mocs_compilation.cpp > CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/damian/Cylindrical-Slicer/C/build/Slicer_autogen/mocs_compilation.cpp > CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ryan/cs426/Cylindrical-Slicer/C/build/Slicer_autogen/mocs_compilation.cpp -o CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/damian/Cylindrical-Slicer/C/build/Slicer_autogen/mocs_compilation.cpp -o CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.o.requires:
 
@@ -347,6 +419,9 @@ Slicer_OBJECTS = \
 "CMakeFiles/Slicer.dir/src/main.cpp.o" \
 "CMakeFiles/Slicer.dir/src/mesh.cpp.o" \
 "CMakeFiles/Slicer.dir/src/window.cpp.o" \
+"CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o" \
+"CMakeFiles/Slicer.dir/src/Geometry.cpp.o" \
+"CMakeFiles/Slicer.dir/src/Vector.cpp.o" \
 "CMakeFiles/Slicer.dir/qrc_qt.cpp.o" \
 "CMakeFiles/Slicer.dir/qrc_gl.cpp.o" \
 "CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.o"
@@ -362,6 +437,9 @@ Slicer: CMakeFiles/Slicer.dir/src/loader.cpp.o
 Slicer: CMakeFiles/Slicer.dir/src/main.cpp.o
 Slicer: CMakeFiles/Slicer.dir/src/mesh.cpp.o
 Slicer: CMakeFiles/Slicer.dir/src/window.cpp.o
+Slicer: CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o
+Slicer: CMakeFiles/Slicer.dir/src/Geometry.cpp.o
+Slicer: CMakeFiles/Slicer.dir/src/Vector.cpp.o
 Slicer: CMakeFiles/Slicer.dir/qrc_qt.cpp.o
 Slicer: CMakeFiles/Slicer.dir/qrc_gl.cpp.o
 Slicer: CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.o
@@ -374,7 +452,7 @@ Slicer: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.9.5
 Slicer: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.9.5
 Slicer: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.9.5
 Slicer: CMakeFiles/Slicer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable Slicer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable Slicer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Slicer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -390,6 +468,9 @@ CMakeFiles/Slicer.dir/requires: CMakeFiles/Slicer.dir/src/loader.cpp.o.requires
 CMakeFiles/Slicer.dir/requires: CMakeFiles/Slicer.dir/src/main.cpp.o.requires
 CMakeFiles/Slicer.dir/requires: CMakeFiles/Slicer.dir/src/mesh.cpp.o.requires
 CMakeFiles/Slicer.dir/requires: CMakeFiles/Slicer.dir/src/window.cpp.o.requires
+CMakeFiles/Slicer.dir/requires: CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o.requires
+CMakeFiles/Slicer.dir/requires: CMakeFiles/Slicer.dir/src/Geometry.cpp.o.requires
+CMakeFiles/Slicer.dir/requires: CMakeFiles/Slicer.dir/src/Vector.cpp.o.requires
 CMakeFiles/Slicer.dir/requires: CMakeFiles/Slicer.dir/qrc_qt.cpp.o.requires
 CMakeFiles/Slicer.dir/requires: CMakeFiles/Slicer.dir/qrc_gl.cpp.o.requires
 CMakeFiles/Slicer.dir/requires: CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.o.requires
@@ -402,6 +483,6 @@ CMakeFiles/Slicer.dir/clean:
 
 CMakeFiles/Slicer.dir/depend: qrc_qt.cpp
 CMakeFiles/Slicer.dir/depend: qrc_gl.cpp
-	cd /home/ryan/cs426/Cylindrical-Slicer/C/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ryan/cs426/Cylindrical-Slicer/C /home/ryan/cs426/Cylindrical-Slicer/C /home/ryan/cs426/Cylindrical-Slicer/C/build /home/ryan/cs426/Cylindrical-Slicer/C/build /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/damian/Cylindrical-Slicer/C/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/damian/Cylindrical-Slicer/C /home/damian/Cylindrical-Slicer/C /home/damian/Cylindrical-Slicer/C/build /home/damian/Cylindrical-Slicer/C/build /home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Slicer.dir/depend
 

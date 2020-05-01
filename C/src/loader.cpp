@@ -2,7 +2,9 @@
 #include <iostream>
 #include <utility>
 #include "loader.h"
-#include "vertex.h"
+#include "Vector.h"
+
+typedef Vector Vertex;
 
 Loader::Loader(QObject* parent, QString  filename, bool is_reload)
         : QThread(parent), filename(std::move(filename)), is_reload(is_reload)

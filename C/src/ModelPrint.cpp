@@ -1,10 +1,4 @@
-
-
-
-#include "Geometry.h"
-#include "mesh.h"
-
-#include <fstream>
+#include "ModelPrint.h"
 //#include printParameters.h
 
 //A polygon does not represent a whole layer only part of it

@@ -4,17 +4,20 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ryan/cs426/Cylindrical-Slicer/C/build/Slicer_autogen/mocs_compilation.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.o"
-  "/home/ryan/cs426/Cylindrical-Slicer/C/build/qrc_gl.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/qrc_gl.cpp.o"
-  "/home/ryan/cs426/Cylindrical-Slicer/C/build/qrc_qt.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/qrc_qt.cpp.o"
-  "/home/ryan/cs426/Cylindrical-Slicer/C/src/app.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/app.cpp.o"
-  "/home/ryan/cs426/Cylindrical-Slicer/C/src/backdrop.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/backdrop.cpp.o"
-  "/home/ryan/cs426/Cylindrical-Slicer/C/src/canvas.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/canvas.cpp.o"
-  "/home/ryan/cs426/Cylindrical-Slicer/C/src/glmesh.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/glmesh.cpp.o"
-  "/home/ryan/cs426/Cylindrical-Slicer/C/src/loader.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/loader.cpp.o"
-  "/home/ryan/cs426/Cylindrical-Slicer/C/src/main.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/main.cpp.o"
-  "/home/ryan/cs426/Cylindrical-Slicer/C/src/mesh.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/mesh.cpp.o"
-  "/home/ryan/cs426/Cylindrical-Slicer/C/src/window.cpp" "/home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/window.cpp.o"
+  "/home/damian/Cylindrical-Slicer/C/build/Slicer_autogen/mocs_compilation.cpp" "/home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/Slicer_autogen/mocs_compilation.cpp.o"
+  "/home/damian/Cylindrical-Slicer/C/build/qrc_gl.cpp" "/home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/qrc_gl.cpp.o"
+  "/home/damian/Cylindrical-Slicer/C/build/qrc_qt.cpp" "/home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/qrc_qt.cpp.o"
+  "/home/damian/Cylindrical-Slicer/C/src/Geometry.cpp" "/home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/Geometry.cpp.o"
+  "/home/damian/Cylindrical-Slicer/C/src/ModelPrint.cpp" "/home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o"
+  "/home/damian/Cylindrical-Slicer/C/src/Vector.cpp" "/home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/Vector.cpp.o"
+  "/home/damian/Cylindrical-Slicer/C/src/app.cpp" "/home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/app.cpp.o"
+  "/home/damian/Cylindrical-Slicer/C/src/backdrop.cpp" "/home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/backdrop.cpp.o"
+  "/home/damian/Cylindrical-Slicer/C/src/canvas.cpp" "/home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/canvas.cpp.o"
+  "/home/damian/Cylindrical-Slicer/C/src/glmesh.cpp" "/home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/glmesh.cpp.o"
+  "/home/damian/Cylindrical-Slicer/C/src/loader.cpp" "/home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/loader.cpp.o"
+  "/home/damian/Cylindrical-Slicer/C/src/main.cpp" "/home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/main.cpp.o"
+  "/home/damian/Cylindrical-Slicer/C/src/mesh.cpp" "/home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/mesh.cpp.o"
+  "/home/damian/Cylindrical-Slicer/C/src/window.cpp" "/home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer.dir/src/window.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

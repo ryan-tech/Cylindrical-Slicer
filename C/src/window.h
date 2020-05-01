@@ -8,8 +8,7 @@
 #include <QMenuBar>
 #include <iostream>
 
-#include "canvas.h"
-
+#include "ModelPrint.cpp"
 
 QT_BEGIN_NAMESPACE
 class QGroupBox;
@@ -21,6 +20,7 @@ QT_END_NAMESPACE
 #include "loader.h"
 
 class Canvas;
+struct ModelPrint;
 
 class Window : public QMainWindow
 {

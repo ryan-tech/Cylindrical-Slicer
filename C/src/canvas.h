@@ -4,8 +4,7 @@
 #include <QtOpenGL>
 #include <QSurfaceFormat>
 #include <QOpenGLShaderProgram>
-#include "ModelPrint.cpp"
-#include "vector3.h"
+#include "ModelPrint.h"
 
 class GLMesh;
 class Mesh;

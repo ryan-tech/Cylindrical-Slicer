@@ -35,7 +35,7 @@ struct Vector
 
 };
 
-/*Vector operator+(const Vector& a, const Vector& b);
+Vector operator+(const Vector& a, const Vector& b);
 Vector operator-(const Vector& a, const Vector& b);
 Vector operator*(const Vector& v, float c);
 Vector operator/(const Vector& v, float c);
@@ -54,8 +54,8 @@ float calcDistance(const Vector& a, const Vector& b);
 float calcMagnitude(const Vector& v);
 
 void normalize(Vector& v);
-Vector normalized(const Vector& v);*/
-
+Vector normalized(const Vector& v);
+/*
 Vector operator+(const Vector& a, const Vector& b)
 {
     Vector c((a.x + b.x),(a.y + b.y),(a.z + b.z));
@@ -142,7 +142,7 @@ Vector normalized(const Vector& v)
     Vector temp;
     temp = v * (1.0f / calcMagnitude(v));
     return temp;
-}
+}*/
 
 
 

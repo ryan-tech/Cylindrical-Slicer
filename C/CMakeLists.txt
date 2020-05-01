@@ -24,7 +24,10 @@ src/glmesh.cpp
 src/loader.cpp
 src/main.cpp
 src/mesh.cpp
-src/window.cpp)
+src/window.cpp
+src/ModelPrint.cpp
+src/Geometry.cpp 
+src/Vector.cpp)
 
 #set project headers.
 set(Project_Headers src/app.h
@@ -33,7 +36,10 @@ src/canvas.h
 src/glmesh.h
 src/loader.h
 src/mesh.h
-src/window.h src/ModelPrint.cpp src/Geometry.h src/Vector.h src/Vector.cpp)
+src/window.h 
+src/ModelPrint.h 
+src/Geometry.h 
+src/Vector.h )
 
 #set project resources and icon resource
 set(Project_Resources qt/qt.qrc gl/gl.qrc)

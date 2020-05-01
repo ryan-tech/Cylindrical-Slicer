@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ryan/cs426/Cylindrical-Slicer/C
+CMAKE_SOURCE_DIR = /home/damian/Cylindrical-Slicer/C
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ryan/cs426/Cylindrical-Slicer/C/build
+CMAKE_BINARY_DIR = /home/damian/Cylindrical-Slicer/C/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -94,7 +94,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ryan/cs426/Cylindrical-Slicer/C/build/CPackSourceConfig.cmake
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/damian/Cylindrical-Slicer/C/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -148,9 +148,9 @@ list_install_components/fast: list_install_components
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/damian/Cylindrical-Slicer/C/build/CMakeFiles /home/damian/Cylindrical-Slicer/C/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryan/cs426/Cylindrical-Slicer/C/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/damian/Cylindrical-Slicer/C/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -284,6 +284,87 @@ qrc_qt.s: qrc_qt.cpp.s
 qrc_qt.cpp.s:
 	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/qrc_qt.cpp.s
 .PHONY : qrc_qt.cpp.s
+
+src/Geometry.o: src/Geometry.cpp.o
+
+.PHONY : src/Geometry.o
+
+# target to build an object file
+src/Geometry.cpp.o:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/Geometry.cpp.o
+.PHONY : src/Geometry.cpp.o
+
+src/Geometry.i: src/Geometry.cpp.i
+
+.PHONY : src/Geometry.i
+
+# target to preprocess a source file
+src/Geometry.cpp.i:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/Geometry.cpp.i
+.PHONY : src/Geometry.cpp.i
+
+src/Geometry.s: src/Geometry.cpp.s
+
+.PHONY : src/Geometry.s
+
+# target to generate assembly for a file
+src/Geometry.cpp.s:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/Geometry.cpp.s
+.PHONY : src/Geometry.cpp.s
+
+src/ModelPrint.o: src/ModelPrint.cpp.o
+
+.PHONY : src/ModelPrint.o
+
+# target to build an object file
+src/ModelPrint.cpp.o:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/ModelPrint.cpp.o
+.PHONY : src/ModelPrint.cpp.o
+
+src/ModelPrint.i: src/ModelPrint.cpp.i
+
+.PHONY : src/ModelPrint.i
+
+# target to preprocess a source file
+src/ModelPrint.cpp.i:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/ModelPrint.cpp.i
+.PHONY : src/ModelPrint.cpp.i
+
+src/ModelPrint.s: src/ModelPrint.cpp.s
+
+.PHONY : src/ModelPrint.s
+
+# target to generate assembly for a file
+src/ModelPrint.cpp.s:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/ModelPrint.cpp.s
+.PHONY : src/ModelPrint.cpp.s
+
+src/Vector.o: src/Vector.cpp.o
+
+.PHONY : src/Vector.o
+
+# target to build an object file
+src/Vector.cpp.o:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/Vector.cpp.o
+.PHONY : src/Vector.cpp.o
+
+src/Vector.i: src/Vector.cpp.i
+
+.PHONY : src/Vector.i
+
+# target to preprocess a source file
+src/Vector.cpp.i:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/Vector.cpp.i
+.PHONY : src/Vector.cpp.i
+
+src/Vector.s: src/Vector.cpp.s
+
+.PHONY : src/Vector.s
+
+# target to generate assembly for a file
+src/Vector.cpp.s:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/Vector.cpp.s
+.PHONY : src/Vector.cpp.s
 
 src/app.o: src/app.cpp.o
 
@@ -526,6 +607,15 @@ help:
 	@echo "... qrc_qt.o"
 	@echo "... qrc_qt.i"
 	@echo "... qrc_qt.s"
+	@echo "... src/Geometry.o"
+	@echo "... src/Geometry.i"
+	@echo "... src/Geometry.s"
+	@echo "... src/ModelPrint.o"
+	@echo "... src/ModelPrint.i"
+	@echo "... src/ModelPrint.s"
+	@echo "... src/Vector.o"
+	@echo "... src/Vector.i"
+	@echo "... src/Vector.s"
 	@echo "... src/app.o"
 	@echo "... src/app.i"
 	@echo "... src/app.s"
