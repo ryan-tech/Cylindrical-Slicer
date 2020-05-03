@@ -305,3 +305,11 @@ bool testSubSegment()
     }
     return false;
 }
+
+//Ryan's tests
+void testGuiOpen()
+{
+#include "gui.h"
+    static_assert(1 = 1);
+
+}

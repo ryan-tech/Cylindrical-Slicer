@@ -5,33 +5,33 @@
 
 
 App::App(int& argc, char *argv[]) :
-    QApplication(argc, argv), window(new Window())
+        QApplication(argc, argv), gui(new Gui())
 {
     QCoreApplication::setOrganizationName("Team23");
     QCoreApplication::setOrganizationDomain("https://github.com/ryan-tech/Cylindrical-Slicer");
     QCoreApplication::setApplicationName("Cylindrical Slicer");
 
     if (argc > 1)
-        window->load_stl(argv[1]);
+        gui->load_stl_file(argv[1]);
     else
-        window->load_stl(":gl/sphere.stl");
-    window->show();
+        gui->load_stl_file(":gl_files/default.stl");
+    gui->show();
 }
 
 App::~App()
 {
-	delete window;
+	delete gui;
 }
 
-bool App::event(QEvent* e)
+bool App::event(QEvent* event)
 {
-    if (e->type() == QEvent::FileOpen)
+    if (event->type() == QEvent::FileOpen)
     {
-        window->load_stl(static_cast<QFileOpenEvent*>(e)->file());
+        gui->load_stl_file(dynamic_cast<QFileOpenEvent *>(event)->file());
         return true;
     }
     else
     {
-        return QApplication::event(e);
+        return QApplication::event(event);
     }
 }

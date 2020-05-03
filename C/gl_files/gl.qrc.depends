@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="gl_files/">
+        <file>mesh.frag</file>
+        <file>mesh.vert</file>
+        <file>mesh_wireframe.frag</file>
+        <file>quad.frag</file>
+        <file>quad.vert</file>
+        <file>default.stl</file>
+        <file>bed.stl</file>
+    </qresource>
+</RCC>

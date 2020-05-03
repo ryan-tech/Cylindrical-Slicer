@@ -18,32 +18,33 @@ set(CMAKE_AUTOUIC ON)
 
 #set project sources
 set(Project_Sources src/app.cpp
-src/backdrop.cpp
-src/canvas.cpp
+        src/background.cpp
+        src/renderer.cpp
 src/glmesh.cpp
-src/loader.cpp
+        src/parser.cpp
 src/main.cpp
 src/mesh.cpp
-src/window.cpp
+        src/gui.cpp
 src/ModelPrint.cpp
 src/Geometry.cpp 
 src/Vector.cpp)
 
 #set project headers.
 set(Project_Headers src/app.h
-src/backdrop.h
-src/canvas.h
+        src/background.h
+        src/renderer.h
 src/glmesh.h
-src/loader.h
+        src/parser.h
 src/mesh.h
-src/window.h 
+        src/gui.h
 src/ModelPrint.h 
 src/Geometry.h 
-src/Vector.h )
+src/Vector.h
+        src/vec3.h src/PrintParameters.h)
 
 #set project resources and icon resource
-set(Project_Resources qt/qt.qrc gl/gl.qrc)
-set(Icon_Resource exe/slicer.rc)
+set(Project_Resources qt/qt.qrc gl_files/gl.qrc)
+set(Icon_Resource src/vec3.h) #exe/slicer.rc src/vec3.h)
 
 #set Policy CMP0072 FindOpenGL behavior
 set(OpenGL_GL_PREFERENCE GLVND)

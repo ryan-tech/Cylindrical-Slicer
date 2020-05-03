@@ -3,9 +3,9 @@
 
 #include <QApplication>
 //#include "canvas.h"
-#include "window.h"
+#include "gui.h"
 
-class Window;
+class Gui;
 
 class App : public QApplication
 {
@@ -14,9 +14,9 @@ public:
     explicit App(int& argc, char *argv[]);
 	~App();
 protected:
-    bool event(QEvent* e) override;
+    bool event(QEvent* event) override;
 private:
-    Window* const window;
+    Gui* const gui;
 
 };
 
