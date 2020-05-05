@@ -53,8 +53,6 @@ void Renderer::load_mesh(Mesh* m, Mesh* b, bool is_reload)
         QVector3D upper(m->xmax(), m->ymax(), m->zmax());
         center = (lower + upper) / 2;
         camera_scale = 2 / (upper - lower).length();
-
-        // Reset other camera parameters
         camera_zoom = .5;
         camera_yaw = 0;
         camera_tilt = 90;
@@ -160,7 +158,6 @@ void Renderer::paintGL()
 void Renderer::draw_mesh(GLMesh* m)
 {
     QOpenGLShaderProgram* selected_mesh_shader = NULL;
-    // Set gl_files draw mode
     if(drawMode == 1)
     {
         selected_mesh_shader = &mesh_wireframe_shader;
@@ -171,31 +168,18 @@ void Renderer::draw_mesh(GLMesh* m)
         selected_mesh_shader = &mesh_shader;
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     }
-
     selected_mesh_shader->bind();
-
-    // Load the transform and view matrices into the shader
     glUniformMatrix4fv(
                 selected_mesh_shader->uniformLocation("transform_matrix"),
                 1, GL_FALSE, transform_matrix().data());
     glUniformMatrix4fv(
                 selected_mesh_shader->uniformLocation("view_matrix"),
                 1, GL_FALSE, view_matrix().data());
-
-    // Compensate for z-flattening when zooming
     glUniform1f(selected_mesh_shader->uniformLocation("zoom"), 1 / camera_zoom);
-
-    // Find and enable the attribute location for vertex position
     const GLuint vp = selected_mesh_shader->attributeLocation("vertex_position");
     glEnableVertexAttribArray(vp);
-
-    // Then draw the mesh with that vertex position
     m->draw(vp);
-
-    // Reset draw mode for the background and anything else that needs to be drawn
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
-    // Clean up state machine
     glDisableVertexAttribArray(vp);
     selected_mesh_shader->release();
 }

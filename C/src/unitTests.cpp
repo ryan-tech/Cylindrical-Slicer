@@ -306,10 +306,150 @@ bool testSubSegment()
     return false;
 }
 
-//Ryan's tests
-void testGuiOpen()
-{
-#include "gui.h"
-    static_assert(1 = 1);
 
+#include "gui.h"
+//Ryan's tests
+bool testGuiOpen()
+{
+    bool returnVal = true;
+    Gui* testgui = new Gui();
+    testgui->on_open_action();
+    if(testgui->filename.isNull())
+    {
+        returnVal = false;
+    }
+
+    return returnVal;
 }
+
+bool testGuiAbout()
+{
+    bool returnVal = true;
+    Gui* testgui = new Gui();
+    testgui->on_about_action();
+    if(testgui->filename.isNull())
+    {
+        returnVal = false;
+    }
+
+    return returnVal;
+}
+
+bool testGuiBadSTL()
+{
+    bool returnVal = true;
+    Gui* testgui = new Gui();
+    testgui-> on_bad_stl_action();
+    if(testgui->QMessageBox->title != "Critical")
+    {
+        returnVal = false;
+    }
+    return returnVal;
+}
+
+bool testGuiBadSTL()
+{
+    bool returnVal = true;
+    Gui* testgui = new Gui();
+    testgui->on_bad_stl_action();
+    if(testgui->QMessageBox->title != "Critical")
+    {
+        returnVal = false;
+    }
+    return returnVal;
+}
+
+bool testGuiEmptyMesh()
+{
+    bool returnVal = true;
+    Gui* testgui = new Gui();
+    testgui->on_empty_mesh_action();
+    if(testgui->object != nullptr)
+    {
+        returnVal = false;
+    }
+    return returnVal;
+}
+
+bool testGuiWeirdSTL()
+{
+    bool returnVal = true;
+    Gui* testgui = new Gui();
+    testgui->on_confusing_stl_action();
+    if(testgui->object != nullptr)
+    {
+        returnVal = false;
+    }
+    return returnVal;
+}
+
+bool testGuiMissingFile()
+{
+    bool returnVal = true;
+    Gui* testgui = new Gui();
+    testgui->on_missing_file_action();
+    if(testgui->filename != nullptr)
+    {
+        returnVal = false;
+    }
+
+    return returnVal;
+}
+
+#include "parser.h"
+
+bool testParser()
+{
+    bool returnVal = true;
+    Parser* testparse = new Parser();
+    if(testparse->get_mesh())
+    {
+        returnVal = false;
+    }
+    if(!testparse->filename)
+    {
+        returnVal = false;
+    }
+    if(!testparse->is_reload)
+    {
+        returnVal = false;
+    }
+    if(confusing_stl)
+    {
+        returnVal = false;
+    }
+    if(!object)
+    {
+        returnVal = false;
+    }
+    return returnVal;
+}
+
+#include "renderer.h"
+
+bool testRenderer()
+{
+    Renderer* r = new Renderer;
+    r->orthographic_view();
+    if(r->anim.value != .25f)
+    {
+        return false;
+    }
+    r->perspective_view();
+    if(r->anim.value != 0f)
+    {
+        return false;
+    }
+    r->render_shaded_shader();
+    if(r->drawMode.value != 0)
+    {
+        return false;
+    }
+    r->render_wireframe_shader();
+    if(r->drawMode.value != 1)
+    {
+        return false;
+    }
+    return true;
+}
+

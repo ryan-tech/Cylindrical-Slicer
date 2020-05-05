@@ -5,6 +5,7 @@
 #include "vec3.h"
 
 void sort_vector(Vector3* begin, Vector3* end, int threads);
+Mesh* generate_mesh(uint32_t tri_count, QVector<Vector3>& verts);
 
 Parser::Parser(QObject* parent, QString  file_name, bool reloaded)
         : QThread(parent), filename(std::move(file_name)), is_reload(reloaded)
