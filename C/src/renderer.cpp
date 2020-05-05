@@ -1,16 +1,8 @@
-#include <QMouseEvent>
-
-#include <cmath>
-#include <utility>
-
 #include "renderer.h"
-#include "background.h"
-#include "glmesh.h"
-#include "mesh.h"
 
 Renderer::Renderer(const QSurfaceFormat& format, QWidget *parent)
     : QOpenGLWidget(parent), mesh(nullptr),
-      scale(1), zoom(1), tilt(90), yaw(0),
+      camera_scale(1), camera_zoom(1), camera_tilt(90), camera_yaw(0),
       perspective(0.25), anim(this, "perspective"), status(" ")
 {
 	setFormat(format);
@@ -29,11 +21,10 @@ Renderer::~Renderer()
 	doneCurrent();
 }
 
-void Renderer::view_anim(float v)
+
+void Renderer::perspective_view()
 {
-    anim.setStartValue(perspective);
-    anim.setEndValue(v);
-    anim.start();
+    view_anim(0.25);
 }
 
 void Renderer::orthographic_view()
@@ -41,19 +32,14 @@ void Renderer::orthographic_view()
     view_anim(0);
 }
 
-void Renderer::perspective_view()
+void Renderer::render_wireframe_shader()
 {
-    view_anim(0.25);
+    setDrawMode(1);
 }
 
 void Renderer::render_shaded_shader()
 {
     setDrawMode(0);
-}
-
-void Renderer::render_wireframe_shader()
-{
-    setDrawMode(1);
 }
 
 void Renderer::load_mesh(Mesh* m, Mesh* b, bool is_reload)
@@ -66,17 +52,24 @@ void Renderer::load_mesh(Mesh* m, Mesh* b, bool is_reload)
         QVector3D lower(m->xmin(), m->ymin(), m->zmin());
         QVector3D upper(m->xmax(), m->ymax(), m->zmax());
         center = (lower + upper) / 2;
-        scale = 2 / (upper - lower).length();
+        camera_scale = 2 / (upper - lower).length();
 
         // Reset other camera parameters
-        zoom = .5;
-        yaw = 0;
-        tilt = 90;
+        camera_zoom = .5;
+        camera_yaw = 0;
+        camera_tilt = 90;
     }
 
     update();
 
     delete m;
+}
+
+void Renderer::view_anim(float v)
+{
+    anim.setStartValue(perspective);
+    anim.setEndValue(v);
+    anim.start();
 }
 
 void Renderer::setStatus(const QString &s)
@@ -190,7 +183,7 @@ void Renderer::draw_mesh(GLMesh* m)
                 1, GL_FALSE, view_matrix().data());
 
     // Compensate for z-flattening when zooming
-    glUniform1f(selected_mesh_shader->uniformLocation("zoom"), 1/zoom);
+    glUniform1f(selected_mesh_shader->uniformLocation("zoom"), 1 / camera_zoom);
 
     // Find and enable the attribute location for vertex position
     const GLuint vp = selected_mesh_shader->attributeLocation("vertex_position");
@@ -210,9 +203,9 @@ void Renderer::draw_mesh(GLMesh* m)
 QMatrix4x4 Renderer::transform_matrix() const
 {
     QMatrix4x4 m;
-    m.rotate(tilt, QVector3D(1, 0, 0));
-    m.rotate(yaw,  QVector3D(0, 0, 1));
-    m.scale(-scale, scale, -scale);
+    m.rotate(camera_tilt, QVector3D(1, 0, 0));
+    m.rotate(camera_yaw, QVector3D(0, 0, 1));
+    m.scale(-camera_scale, camera_scale, -camera_scale);
     m.translate(-center);
     return m;
 }
@@ -222,13 +215,13 @@ QMatrix4x4 Renderer::view_matrix() const
     QMatrix4x4 m;
     if (width() > height())
     {
-        m.scale(-height() / float(width()), 1, 0.5);
+        m.scale(float(-height()) / float(width()), 1, 0.5);
     }
     else
     {
-        m.scale(-1, width() / float(height()), 0.5);
+        m.scale(-1, float(width()) / float(height()), 0.5);
     }
-    m.scale(zoom, zoom, 1);
+    m.scale(camera_zoom, camera_zoom, 1);
     m(3, 2) = perspective;
     return m;
 }
@@ -260,16 +253,16 @@ void Renderer::mouseMoveEvent(QMouseEvent* event)
 
     if (event->buttons() & Qt::LeftButton)
     {
-        yaw = fmod(yaw - d.x(), 360);
-        tilt = fmod(tilt - d.y(), 360);
+        camera_yaw = fmod(camera_yaw - float(d.x()), 360);
+        camera_tilt = fmod(camera_tilt - float(d.y()), 360);
         update();
     }
     else if (event->buttons() & Qt::RightButton)
     {
         center = transform_matrix().inverted() *
                  view_matrix().inverted() *
-                 QVector3D(-d.x() / (0.5*width()),
-                            d.y() / (0.5*height()), 0);
+                 QVector3D(float(-d.x()) / (0.5*width()),
+                           float(d.y()) / (0.5*height()), 0);
         update();
     }
     mouse_pos = p;
@@ -277,8 +270,6 @@ void Renderer::mouseMoveEvent(QMouseEvent* event)
 
 void Renderer::wheelEvent(QWheelEvent *event)
 {
-    // Find GL position before the zoom operation
-    // (to zoom about mouse cursor)
     auto p = event->pos();
     QVector3D v(1 - p.x() / (0.5*width()),
                 p.y() / (0.5*height()) - 1, 0);
@@ -288,15 +279,13 @@ void Renderer::wheelEvent(QWheelEvent *event)
     if (event->delta() < 0)
     {
         for (int i=0; i > event->delta(); --i)
-            zoom *= 1.001;
+            camera_zoom *= 1.001;
     }
     else if (event->delta() > 0)
     {
         for (int i=0; i < event->delta(); ++i)
-            zoom /= 1.001;
+            camera_zoom /= 1.001;
     }
-
-    // Then find the cursor's GL position post-zoom and adjust center.
     QVector3D b = transform_matrix().inverted() *
                   view_matrix().inverted() * v;
     center += b - a;
