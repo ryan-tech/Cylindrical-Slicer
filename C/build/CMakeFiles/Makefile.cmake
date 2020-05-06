@@ -11,7 +11,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.10.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.10.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.10.2/CMakeSystem.cmake"
-  "../gl/gl.qrc"
+  "../gl_files/gl.qrc"
   "../qt/qt.qrc"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake"
@@ -69,7 +69,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "qt/qt.qrc.depends"
-  "gl/gl.qrc.depends"
+  "gl_files/gl.qrc.depends"
   "CPackConfig.cmake"
   "CPackSourceConfig.cmake"
   "CMakeFiles/Slicer_autogen.dir/AutogenInfo.cmake"

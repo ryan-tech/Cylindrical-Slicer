@@ -1,11 +1,4 @@
-#include <future>
-#include <iostream>
-#include <utility>
 #include "parser.h"
-#include "vec3.h"
-
-void sort_vector(Vector3* begin, Vector3* end, int threads);
-Mesh* generate_mesh(uint32_t tri_count, QVector<Vector3>& verts);
 
 Parser::Parser(QObject* parent, QString  file_name, bool reloaded)
         : QThread(parent), filename(std::move(file_name)), is_reload(reloaded)
@@ -97,7 +90,7 @@ Mesh* Parser::parse_stl()
     return parse_binary(file);
 }
 
-Mesh* generate_mesh(uint32_t tri_count, QVector<Vector3>& verts)
+Mesh* Parser::generate_mesh(uint32_t tri_count, QVector<Vector3>& verts)
 {
     size_t i = 0;
     while(i < tri_count * 3)
@@ -167,7 +160,7 @@ Mesh* Parser::parse_binary(QFile& fi)
     return generate_mesh(tri_count, verts);
 }
 
-void sort_vector(Vector3* begin, Vector3* end, int threads)
+void Parser::sort_vector(Vector3* begin, Vector3* end, int threads)
 {
     if (threads < 2 || end - begin < 2)
     {

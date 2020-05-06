@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/damian/Cylindrical-Slicer/C
+CMAKE_SOURCE_DIR = /home/ryan/CLionProjects/Cylindrical-Slicer/C
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/damian/Cylindrical-Slicer/C/build
+CMAKE_BINARY_DIR = /home/ryan/CLionProjects/Cylindrical-Slicer/C/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -94,7 +94,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/damian/Cylindrical-Slicer/C/build/CPackSourceConfig.cmake
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/ryan/CLionProjects/Cylindrical-Slicer/C/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -148,9 +148,9 @@ list_install_components/fast: list_install_components
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/damian/Cylindrical-Slicer/C/build/CMakeFiles /home/damian/Cylindrical-Slicer/C/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryan/CLionProjects/Cylindrical-Slicer/C/build/CMakeFiles /home/ryan/CLionProjects/Cylindrical-Slicer/C/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/damian/Cylindrical-Slicer/C/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryan/CLionProjects/Cylindrical-Slicer/C/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -393,59 +393,32 @@ src/app.cpp.s:
 	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/app.cpp.s
 .PHONY : src/app.cpp.s
 
-src/backdrop.o: src/backdrop.cpp.o
+src/background.o: src/background.cpp.o
 
-.PHONY : src/backdrop.o
-
-# target to build an object file
-src/backdrop.cpp.o:
-	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/backdrop.cpp.o
-.PHONY : src/backdrop.cpp.o
-
-src/backdrop.i: src/backdrop.cpp.i
-
-.PHONY : src/backdrop.i
-
-# target to preprocess a source file
-src/backdrop.cpp.i:
-	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/backdrop.cpp.i
-.PHONY : src/backdrop.cpp.i
-
-src/backdrop.s: src/backdrop.cpp.s
-
-.PHONY : src/backdrop.s
-
-# target to generate assembly for a file
-src/backdrop.cpp.s:
-	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/backdrop.cpp.s
-.PHONY : src/backdrop.cpp.s
-
-src/canvas.o: src/canvas.cpp.o
-
-.PHONY : src/canvas.o
+.PHONY : src/background.o
 
 # target to build an object file
-src/canvas.cpp.o:
-	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/canvas.cpp.o
-.PHONY : src/canvas.cpp.o
+src/background.cpp.o:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/background.cpp.o
+.PHONY : src/background.cpp.o
 
-src/canvas.i: src/canvas.cpp.i
+src/background.i: src/background.cpp.i
 
-.PHONY : src/canvas.i
+.PHONY : src/background.i
 
 # target to preprocess a source file
-src/canvas.cpp.i:
-	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/canvas.cpp.i
-.PHONY : src/canvas.cpp.i
+src/background.cpp.i:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/background.cpp.i
+.PHONY : src/background.cpp.i
 
-src/canvas.s: src/canvas.cpp.s
+src/background.s: src/background.cpp.s
 
-.PHONY : src/canvas.s
+.PHONY : src/background.s
 
 # target to generate assembly for a file
-src/canvas.cpp.s:
-	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/canvas.cpp.s
-.PHONY : src/canvas.cpp.s
+src/background.cpp.s:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/background.cpp.s
+.PHONY : src/background.cpp.s
 
 src/glmesh.o: src/glmesh.cpp.o
 
@@ -474,32 +447,32 @@ src/glmesh.cpp.s:
 	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/glmesh.cpp.s
 .PHONY : src/glmesh.cpp.s
 
-src/loader.o: src/loader.cpp.o
+src/gui.o: src/gui.cpp.o
 
-.PHONY : src/loader.o
+.PHONY : src/gui.o
 
 # target to build an object file
-src/loader.cpp.o:
-	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/loader.cpp.o
-.PHONY : src/loader.cpp.o
+src/gui.cpp.o:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/gui.cpp.o
+.PHONY : src/gui.cpp.o
 
-src/loader.i: src/loader.cpp.i
+src/gui.i: src/gui.cpp.i
 
-.PHONY : src/loader.i
+.PHONY : src/gui.i
 
 # target to preprocess a source file
-src/loader.cpp.i:
-	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/loader.cpp.i
-.PHONY : src/loader.cpp.i
+src/gui.cpp.i:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/gui.cpp.i
+.PHONY : src/gui.cpp.i
 
-src/loader.s: src/loader.cpp.s
+src/gui.s: src/gui.cpp.s
 
-.PHONY : src/loader.s
+.PHONY : src/gui.s
 
 # target to generate assembly for a file
-src/loader.cpp.s:
-	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/loader.cpp.s
-.PHONY : src/loader.cpp.s
+src/gui.cpp.s:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/gui.cpp.s
+.PHONY : src/gui.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -555,32 +528,59 @@ src/mesh.cpp.s:
 	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/mesh.cpp.s
 .PHONY : src/mesh.cpp.s
 
-src/window.o: src/window.cpp.o
+src/parser.o: src/parser.cpp.o
 
-.PHONY : src/window.o
+.PHONY : src/parser.o
 
 # target to build an object file
-src/window.cpp.o:
-	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/window.cpp.o
-.PHONY : src/window.cpp.o
+src/parser.cpp.o:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/parser.cpp.o
+.PHONY : src/parser.cpp.o
 
-src/window.i: src/window.cpp.i
+src/parser.i: src/parser.cpp.i
 
-.PHONY : src/window.i
+.PHONY : src/parser.i
 
 # target to preprocess a source file
-src/window.cpp.i:
-	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/window.cpp.i
-.PHONY : src/window.cpp.i
+src/parser.cpp.i:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/parser.cpp.i
+.PHONY : src/parser.cpp.i
 
-src/window.s: src/window.cpp.s
+src/parser.s: src/parser.cpp.s
 
-.PHONY : src/window.s
+.PHONY : src/parser.s
 
 # target to generate assembly for a file
-src/window.cpp.s:
-	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/window.cpp.s
-.PHONY : src/window.cpp.s
+src/parser.cpp.s:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/parser.cpp.s
+.PHONY : src/parser.cpp.s
+
+src/renderer.o: src/renderer.cpp.o
+
+.PHONY : src/renderer.o
+
+# target to build an object file
+src/renderer.cpp.o:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/renderer.cpp.o
+.PHONY : src/renderer.cpp.o
+
+src/renderer.i: src/renderer.cpp.i
+
+.PHONY : src/renderer.i
+
+# target to preprocess a source file
+src/renderer.cpp.i:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/renderer.cpp.i
+.PHONY : src/renderer.cpp.i
+
+src/renderer.s: src/renderer.cpp.s
+
+.PHONY : src/renderer.s
+
+# target to generate assembly for a file
+src/renderer.cpp.s:
+	$(MAKE) -f CMakeFiles/Slicer.dir/build.make CMakeFiles/Slicer.dir/src/renderer.cpp.s
+.PHONY : src/renderer.cpp.s
 
 # Help Target
 help:
@@ -619,27 +619,27 @@ help:
 	@echo "... src/app.o"
 	@echo "... src/app.i"
 	@echo "... src/app.s"
-	@echo "... src/backdrop.o"
-	@echo "... src/backdrop.i"
-	@echo "... src/backdrop.s"
-	@echo "... src/canvas.o"
-	@echo "... src/canvas.i"
-	@echo "... src/canvas.s"
+	@echo "... src/background.o"
+	@echo "... src/background.i"
+	@echo "... src/background.s"
 	@echo "... src/glmesh.o"
 	@echo "... src/glmesh.i"
 	@echo "... src/glmesh.s"
-	@echo "... src/loader.o"
-	@echo "... src/loader.i"
-	@echo "... src/loader.s"
+	@echo "... src/gui.o"
+	@echo "... src/gui.i"
+	@echo "... src/gui.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/mesh.o"
 	@echo "... src/mesh.i"
 	@echo "... src/mesh.s"
-	@echo "... src/window.o"
-	@echo "... src/window.i"
-	@echo "... src/window.s"
+	@echo "... src/parser.o"
+	@echo "... src/parser.i"
+	@echo "... src/parser.s"
+	@echo "... src/renderer.o"
+	@echo "... src/renderer.i"
+	@echo "... src/renderer.s"
 .PHONY : help
 
 

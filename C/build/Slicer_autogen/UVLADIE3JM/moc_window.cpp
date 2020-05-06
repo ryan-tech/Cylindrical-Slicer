@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../src/window.h"
+#include "../../../src/gui.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Window_t {
-    QByteArrayData data[28];
-    char stringdata0[317];
+    QByteArrayData data[29];
+    char stringdata0[418];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,44 +32,48 @@ struct qt_meta_stringdata_Window_t {
 static const qt_meta_stringdata_Window_t qt_meta_stringdata_Window = {
     {
 QT_MOC_LITERAL(0, 0, 6), // "Window"
-QT_MOC_LITERAL(1, 7, 7), // "on_open"
-QT_MOC_LITERAL(2, 15, 0), // ""
-QT_MOC_LITERAL(3, 16, 8), // "on_about"
-QT_MOC_LITERAL(4, 25, 10), // "on_bad_stl"
-QT_MOC_LITERAL(5, 36, 13), // "on_empty_mesh"
-QT_MOC_LITERAL(6, 50, 15), // "on_missing_file"
-QT_MOC_LITERAL(7, 66, 16), // "on_confusing_stl"
-QT_MOC_LITERAL(8, 83, 21), // "on_printer_parameters"
-QT_MOC_LITERAL(9, 105, 8), // "on_slice"
-QT_MOC_LITERAL(10, 114, 14), // "on_gcodeExport"
-QT_MOC_LITERAL(11, 129, 11), // "enable_open"
-QT_MOC_LITERAL(12, 141, 12), // "disable_open"
-QT_MOC_LITERAL(13, 154, 11), // "set_watched"
-QT_MOC_LITERAL(14, 166, 8), // "filename"
-QT_MOC_LITERAL(15, 175, 13), // "on_projection"
-QT_MOC_LITERAL(16, 189, 8), // "QAction*"
-QT_MOC_LITERAL(17, 198, 4), // "proj"
-QT_MOC_LITERAL(18, 203, 11), // "on_drawMode"
-QT_MOC_LITERAL(19, 215, 4), // "mode"
-QT_MOC_LITERAL(20, 220, 17), // "on_watched_change"
-QT_MOC_LITERAL(21, 238, 9), // "on_reload"
-QT_MOC_LITERAL(22, 248, 23), // "on_autoreload_triggered"
-QT_MOC_LITERAL(23, 272, 1), // "r"
-QT_MOC_LITERAL(24, 274, 15), // "on_clear_recent"
-QT_MOC_LITERAL(25, 290, 14), // "on_load_recent"
-QT_MOC_LITERAL(26, 305, 1), // "a"
-QT_MOC_LITERAL(27, 307, 9) // "on_loaded"
+QT_MOC_LITERAL(1, 7, 14), // "on_open_action"
+QT_MOC_LITERAL(2, 22, 0), // ""
+QT_MOC_LITERAL(3, 23, 15), // "on_about_action"
+QT_MOC_LITERAL(4, 39, 17), // "on_bad_stl_action"
+QT_MOC_LITERAL(5, 57, 20), // "on_empty_mesh_action"
+QT_MOC_LITERAL(6, 78, 22), // "on_missing_file_action"
+QT_MOC_LITERAL(7, 101, 23), // "on_confusing_stl_action"
+QT_MOC_LITERAL(8, 125, 28), // "on_printer_parameters_action"
+QT_MOC_LITERAL(9, 154, 15), // "on_slice_action"
+QT_MOC_LITERAL(10, 170, 21), // "on_gcodeExport_action"
+QT_MOC_LITERAL(11, 192, 11), // "enable_open"
+QT_MOC_LITERAL(12, 204, 12), // "disable_open"
+QT_MOC_LITERAL(13, 217, 18), // "set_watched_action"
+QT_MOC_LITERAL(14, 236, 9), // "file_name"
+QT_MOC_LITERAL(15, 246, 20), // "on_projection_action"
+QT_MOC_LITERAL(16, 267, 8), // "QAction*"
+QT_MOC_LITERAL(17, 276, 4), // "proj"
+QT_MOC_LITERAL(18, 281, 18), // "on_drawMode_action"
+QT_MOC_LITERAL(19, 300, 4), // "mode"
+QT_MOC_LITERAL(20, 305, 24), // "on_watched_change_action"
+QT_MOC_LITERAL(21, 330, 8), // "filename"
+QT_MOC_LITERAL(22, 339, 9), // "on_reload"
+QT_MOC_LITERAL(23, 349, 23), // "on_autoreload_triggered"
+QT_MOC_LITERAL(24, 373, 1), // "r"
+QT_MOC_LITERAL(25, 375, 15), // "on_clear_recent"
+QT_MOC_LITERAL(26, 391, 14), // "on_load_recent"
+QT_MOC_LITERAL(27, 406, 1), // "a"
+QT_MOC_LITERAL(28, 408, 9) // "on_loaded"
 
     },
-    "Window\0on_open\0\0on_about\0on_bad_stl\0"
-    "on_empty_mesh\0on_missing_file\0"
-    "on_confusing_stl\0on_printer_parameters\0"
-    "on_slice\0on_gcodeExport\0enable_open\0"
-    "disable_open\0set_watched\0filename\0"
-    "on_projection\0QAction*\0proj\0on_drawMode\0"
-    "mode\0on_watched_change\0on_reload\0"
-    "on_autoreload_triggered\0r\0on_clear_recent\0"
-    "on_load_recent\0a\0on_loaded"
+    "Window\0on_open_action\0\0on_about_action\0"
+    "on_bad_stl_action\0on_empty_mesh_action\0"
+    "on_missing_file_action\0on_confusing_stl_action\0"
+    "on_printer_parameters_action\0"
+    "on_slice_action\0on_gcodeExport_action\0"
+    "enable_open\0disable_open\0set_watched_action\0"
+    "file_name\0on_projection_action\0QAction*\0"
+    "proj\0on_drawMode_action\0mode\0"
+    "on_watched_change_action\0filename\0"
+    "on_reload\0on_autoreload_triggered\0r\0"
+    "on_clear_recent\0on_load_recent\0a\0"
+    "on_loaded"
 };
 #undef QT_MOC_LITERAL
 
@@ -102,11 +106,11 @@ static const uint qt_meta_data_Window[] = {
       15,    1,  128,    2, 0x08 /* Private */,
       18,    1,  131,    2, 0x08 /* Private */,
       20,    1,  134,    2, 0x08 /* Private */,
-      21,    0,  137,    2, 0x08 /* Private */,
-      22,    1,  138,    2, 0x08 /* Private */,
-      24,    0,  141,    2, 0x08 /* Private */,
-      25,    1,  142,    2, 0x08 /* Private */,
-      27,    1,  145,    2, 0x08 /* Private */,
+      22,    0,  137,    2, 0x08 /* Private */,
+      23,    1,  138,    2, 0x08 /* Private */,
+      25,    0,  141,    2, 0x08 /* Private */,
+      26,    1,  142,    2, 0x08 /* Private */,
+      28,    1,  145,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -123,12 +127,12 @@ static const uint qt_meta_data_Window[] = {
     QMetaType::Void, QMetaType::QString,   14,
     QMetaType::Void, 0x80000000 | 16,   17,
     QMetaType::Void, 0x80000000 | 16,   19,
-    QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void, QMetaType::QString,   21,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   23,
+    QMetaType::Void, QMetaType::Bool,   24,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 16,   26,
-    QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void, 0x80000000 | 16,   27,
+    QMetaType::Void, QMetaType::QString,   21,
 
        0        // eod
 };
@@ -139,21 +143,21 @@ void Window::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         Window *_t = static_cast<Window *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_open(); break;
-        case 1: _t->on_about(); break;
-        case 2: _t->on_bad_stl(); break;
-        case 3: _t->on_empty_mesh(); break;
-        case 4: _t->on_missing_file(); break;
-        case 5: _t->on_confusing_stl(); break;
-        case 6: _t->on_printer_parameters(); break;
-        case 7: _t->on_slice(); break;
-        case 8: _t->on_gcodeExport(); break;
+        case 0: _t->on_open_action(); break;
+        case 1: _t->on_about_action(); break;
+        case 2: _t->on_bad_stl_action(); break;
+        case 3: _t->on_empty_mesh_action(); break;
+        case 4: _t->on_missing_file_action(); break;
+        case 5: _t->on_confusing_stl_action(); break;
+        case 6: _t->on_printer_parameters_action(); break;
+        case 7: _t->on_slice_action(); break;
+        case 8: _t->on_gcodeExport_action(); break;
         case 9: _t->enable_open(); break;
         case 10: _t->disable_open(); break;
-        case 11: _t->set_watched((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 12: _t->on_projection((*reinterpret_cast< QAction*(*)>(_a[1]))); break;
-        case 13: _t->on_drawMode((*reinterpret_cast< QAction*(*)>(_a[1]))); break;
-        case 14: _t->on_watched_change((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 11: _t->set_watched_action((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 12: _t->on_projection_action((*reinterpret_cast< QAction*(*)>(_a[1]))); break;
+        case 13: _t->on_drawMode_action((*reinterpret_cast< QAction*(*)>(_a[1]))); break;
+        case 14: _t->on_watched_change_action((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 15: _t->on_reload(); break;
         case 16: _t->on_autoreload_triggered((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 17: _t->on_clear_recent(); break;

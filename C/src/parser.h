@@ -1,8 +1,11 @@
 #ifndef LOADER_H
 #define LOADER_H
-
+#include <future>
+#include <iostream>
+#include <utility>
 #include <QThread>
 
+#include "vec3.h"
 #include "mesh.h"
 
 class Parser : public QThread
@@ -13,6 +16,8 @@ public:
     ~Parser();
     void run();
     Mesh* get_mesh() { return object; }
+    void sort_vector(Vector3* begin, Vector3* end, int threads);
+    Mesh* generate_mesh(uint32_t tri_count, QVector<Vector3>& verts);
 
 protected:
     Mesh* parse_stl();
@@ -31,7 +36,7 @@ signals:
 private:
     QString filename;
     bool is_reload;
-    bool confusing_stl;
+    bool confusing_stl{};
     Mesh* object;
 
 };

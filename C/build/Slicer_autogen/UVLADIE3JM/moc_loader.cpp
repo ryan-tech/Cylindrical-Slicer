@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../src/loader.h"
+#include "../../../src/parser.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
@@ -20,40 +20,40 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_Loader_t {
+struct qt_meta_stringdata_STLParser_t {
     QByteArrayData data[13];
-    char stringdata0[130];
+    char stringdata0[133];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_Loader_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_STLParser_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_Loader_t qt_meta_stringdata_Loader = {
+static const qt_meta_stringdata_STLParser_t qt_meta_stringdata_STLParser = {
     {
-QT_MOC_LITERAL(0, 0, 6), // "Loader"
-QT_MOC_LITERAL(1, 7, 11), // "loaded_file"
-QT_MOC_LITERAL(2, 19, 0), // ""
-QT_MOC_LITERAL(3, 20, 8), // "filename"
-QT_MOC_LITERAL(4, 29, 8), // "got_mesh"
-QT_MOC_LITERAL(5, 38, 5), // "Mesh*"
-QT_MOC_LITERAL(6, 44, 1), // "m"
-QT_MOC_LITERAL(7, 46, 1), // "b"
-QT_MOC_LITERAL(8, 48, 9), // "is_reload"
-QT_MOC_LITERAL(9, 58, 13), // "error_bad_stl"
-QT_MOC_LITERAL(10, 72, 16), // "error_empty_mesh"
-QT_MOC_LITERAL(11, 89, 21), // "warning_confusing_stl"
-QT_MOC_LITERAL(12, 111, 18) // "error_missing_file"
+QT_MOC_LITERAL(0, 0, 9), // "STLParser"
+QT_MOC_LITERAL(1, 10, 11), // "loaded_file"
+QT_MOC_LITERAL(2, 22, 0), // ""
+QT_MOC_LITERAL(3, 23, 8), // "filename"
+QT_MOC_LITERAL(4, 32, 8), // "got_mesh"
+QT_MOC_LITERAL(5, 41, 5), // "Mesh*"
+QT_MOC_LITERAL(6, 47, 1), // "m"
+QT_MOC_LITERAL(7, 49, 1), // "b"
+QT_MOC_LITERAL(8, 51, 9), // "is_reload"
+QT_MOC_LITERAL(9, 61, 13), // "error_bad_stl"
+QT_MOC_LITERAL(10, 75, 16), // "error_empty_mesh"
+QT_MOC_LITERAL(11, 92, 21), // "warning_confusing_stl"
+QT_MOC_LITERAL(12, 114, 18) // "error_missing_file"
 
     },
-    "Loader\0loaded_file\0\0filename\0got_mesh\0"
-    "Mesh*\0m\0b\0is_reload\0error_bad_stl\0"
+    "STLParser\0loaded_file\0\0filename\0"
+    "got_mesh\0Mesh*\0m\0b\0is_reload\0error_bad_stl\0"
     "error_empty_mesh\0warning_confusing_stl\0"
     "error_missing_file"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_Loader[] = {
+static const uint qt_meta_data_STLParser[] = {
 
  // content:
        7,       // revision
@@ -85,10 +85,10 @@ static const uint qt_meta_data_Loader[] = {
        0        // eod
 };
 
-void Loader::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void STLParser::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        Loader *_t = static_cast<Loader *>(_o);
+        STLParser *_t = static_cast<STLParser *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->loaded_file((*reinterpret_cast< QString(*)>(_a[1]))); break;
@@ -102,43 +102,43 @@ void Loader::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            typedef void (Loader::*_t)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Loader::loaded_file)) {
+            typedef void (STLParser::*_t)(QString );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&STLParser::loaded_file)) {
                 *result = 0;
                 return;
             }
         }
         {
-            typedef void (Loader::*_t)(Mesh * , Mesh * , bool );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Loader::got_mesh)) {
+            typedef void (STLParser::*_t)(Mesh * , Mesh * , bool );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&STLParser::got_mesh)) {
                 *result = 1;
                 return;
             }
         }
         {
-            typedef void (Loader::*_t)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Loader::error_bad_stl)) {
+            typedef void (STLParser::*_t)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&STLParser::error_bad_stl)) {
                 *result = 2;
                 return;
             }
         }
         {
-            typedef void (Loader::*_t)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Loader::error_empty_mesh)) {
+            typedef void (STLParser::*_t)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&STLParser::error_empty_mesh)) {
                 *result = 3;
                 return;
             }
         }
         {
-            typedef void (Loader::*_t)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Loader::warning_confusing_stl)) {
+            typedef void (STLParser::*_t)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&STLParser::warning_confusing_stl)) {
                 *result = 4;
                 return;
             }
         }
         {
-            typedef void (Loader::*_t)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Loader::error_missing_file)) {
+            typedef void (STLParser::*_t)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&STLParser::error_missing_file)) {
                 *result = 5;
                 return;
             }
@@ -146,26 +146,26 @@ void Loader::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
     }
 }
 
-const QMetaObject Loader::staticMetaObject = {
-    { &QThread::staticMetaObject, qt_meta_stringdata_Loader.data,
-      qt_meta_data_Loader,  qt_static_metacall, nullptr, nullptr}
+const QMetaObject STLParser::staticMetaObject = {
+    { &QThread::staticMetaObject, qt_meta_stringdata_STLParser.data,
+      qt_meta_data_STLParser,  qt_static_metacall, nullptr, nullptr}
 };
 
 
-const QMetaObject *Loader::metaObject() const
+const QMetaObject *STLParser::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *Loader::qt_metacast(const char *_clname)
+void *STLParser::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_Loader.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_STLParser.stringdata0))
         return static_cast<void*>(this);
     return QThread::qt_metacast(_clname);
 }
 
-int Loader::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int STLParser::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QThread::qt_metacall(_c, _id, _a);
     if (_id < 0)
@@ -183,39 +183,39 @@ int Loader::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void Loader::loaded_file(QString _t1)
+void STLParser::loaded_file(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
-void Loader::got_mesh(Mesh * _t1, Mesh * _t2, bool _t3)
+void STLParser::got_mesh(Mesh * _t1, Mesh * _t2, bool _t3)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 
 // SIGNAL 2
-void Loader::error_bad_stl()
+void STLParser::error_bad_stl()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 
 // SIGNAL 3
-void Loader::error_empty_mesh()
+void STLParser::error_empty_mesh()
 {
     QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
 }
 
 // SIGNAL 4
-void Loader::warning_confusing_stl()
+void STLParser::warning_confusing_stl()
 {
     QMetaObject::activate(this, &staticMetaObject, 4, nullptr);
 }
 
 // SIGNAL 5
-void Loader::error_missing_file()
+void STLParser::error_missing_file()
 {
     QMetaObject::activate(this, &staticMetaObject, 5, nullptr);
 }

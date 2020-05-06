@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/damian/Cylindrical-Slicer/C
+CMAKE_SOURCE_DIR = /home/ryan/CLionProjects/Cylindrical-Slicer/C
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/damian/Cylindrical-Slicer/C/build
+CMAKE_BINARY_DIR = /home/ryan/CLionProjects/Cylindrical-Slicer/C/build
 
 # Utility rule file for Slicer_autogen.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/damian/Cylindrical-Slicer/C/build
 include CMakeFiles/Slicer_autogen.dir/progress.make
 
 CMakeFiles/Slicer_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/damian/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target Slicer"
-	/usr/bin/cmake -E cmake_autogen /home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer_autogen.dir ""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ryan/CLionProjects/Cylindrical-Slicer/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target Slicer"
+	/usr/bin/cmake -E cmake_autogen /home/ryan/CLionProjects/Cylindrical-Slicer/C/build/CMakeFiles/Slicer_autogen.dir ""
 
 Slicer_autogen: CMakeFiles/Slicer_autogen
 Slicer_autogen: CMakeFiles/Slicer_autogen.dir/build.make
@@ -72,6 +72,6 @@ CMakeFiles/Slicer_autogen.dir/clean:
 .PHONY : CMakeFiles/Slicer_autogen.dir/clean
 
 CMakeFiles/Slicer_autogen.dir/depend:
-	cd /home/damian/Cylindrical-Slicer/C/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/damian/Cylindrical-Slicer/C /home/damian/Cylindrical-Slicer/C /home/damian/Cylindrical-Slicer/C/build /home/damian/Cylindrical-Slicer/C/build /home/damian/Cylindrical-Slicer/C/build/CMakeFiles/Slicer_autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ryan/CLionProjects/Cylindrical-Slicer/C/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ryan/CLionProjects/Cylindrical-Slicer/C /home/ryan/CLionProjects/Cylindrical-Slicer/C /home/ryan/CLionProjects/Cylindrical-Slicer/C/build /home/ryan/CLionProjects/Cylindrical-Slicer/C/build /home/ryan/CLionProjects/Cylindrical-Slicer/C/build/CMakeFiles/Slicer_autogen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Slicer_autogen.dir/depend
 

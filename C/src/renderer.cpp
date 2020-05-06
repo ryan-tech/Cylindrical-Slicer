@@ -24,12 +24,12 @@ Renderer::~Renderer()
 
 void Renderer::perspective_view()
 {
-    view_anim(0.25);
+    set_anim(0.25);
 }
 
 void Renderer::orthographic_view()
 {
-    view_anim(0);
+    set_anim(0);
 }
 
 void Renderer::render_wireframe_shader()
@@ -63,7 +63,7 @@ void Renderer::load_mesh(Mesh* m, Mesh* b, bool is_reload)
     delete m;
 }
 
-void Renderer::view_anim(float v)
+void Renderer::set_anim(float v)
 {
     anim.setStartValue(perspective);
     anim.setEndValue(v);
